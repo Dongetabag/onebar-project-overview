@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Bar Experience — Project Overview by Recipe Labs</title>
+  <meta name="description" content="A custom Hartford hospitality growth program for One Bar Experience — website, AI receptionist, intelligence suite, and content engine. Prepared by Recipe Labs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="icon" type="image/png" href="media/one-bar-logo-clean.png">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #F2EEE6;
+      --bg-card: #E6E0D3;
+      --bg-white: #FAF6EE;
+      --bg-dark: #0A0A0A;
+      --bg-deep: #161310;
+      --text-primary: #141210;
+      --text-secondary: rgba(20, 18, 16, 0.62);
+      --text-muted: rgba(20, 18, 16, 0.4);
+      --text-faint: rgba(20, 18, 16, 0.22);
+      --text-inverse: #F5F1E8;
+      --accent: #B85640;
+      --accent-hover: #A04632;
+      --accent-soft: rgba(184, 86, 64, 0.08);
+      --warm: #D4A843;
+      --green: #3B8B5A;
+      --border: rgba(20, 18, 16, 0.1);
+      --border-hover: rgba(20, 18, 16, 0.2);
+      --pill-bg: rgba(20, 18, 16, 0.08);
+      --pill-bg-hover: rgba(20, 18, 16, 0.15);
+      --radius-sm: 7px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+      --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Playfair display for headings & accents */
+    .display-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+    ::selection { background: rgba(184, 86, 64, 0.18); color: #141210; }
+
+    .container-tight {
+      max-width: 1520px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .container-tight { padding-left: 6.5rem; padding-right: 6.5rem; }
+    }
+
+    .card-light {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+    }
+    .card-glass {
+      background: rgba(250, 246, 238, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 28px;
+      background: var(--pill-bg);
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .pill:hover { background: var(--pill-bg-hover); }
+    .pill-accent { background: var(--accent); color: #fff; }
+    .pill-accent:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 16px rgba(184, 86, 64, 0.28);
+    }
+    .pill-dark { background: var(--bg-dark); color: var(--text-inverse); }
+    .pill-dark:hover { background: #2a2520; }
+
+    .section-divider { height: 1px; background: var(--border); }
+
+    /* ── TOP NAV ── */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(242, 238, 230, 0.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topnav-inner {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 14px 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .topnav-inner { padding: 16px 6.5rem; }
+    }
+    .topnav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .topnav-brand img.onebar { height: 36px; width: auto; display: block; }
+    .topnav-brand .sep {
+      width: 1px; height: 22px; background: var(--border);
+    }
+    .topnav-brand .partner {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .topnav-brand .rl-logo { height: 30px; width: auto; opacity: 0.9; }
+    .topnav-actions { display: flex; align-items: center; gap: 10px; }
+    @media (max-width: 640px) {
+      .topnav-actions .pill { padding: 8px 16px; font-size: 10px; }
+      .topnav-brand .partner { display: none; }
+    }
+
+    /* ── PULSE ── */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+    /* ── HERO ── */
+    .hero { padding: 12px 12px 0; }
+    @media (min-width: 768px) { .hero { padding: 16px 16px 0; } }
+    .hero-card {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      min-height: calc(100vh - 140px);
+      background: #0A0A0A;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    @media (min-width: 768px) { .hero-card { border-radius: 24px; } }
+    .hero-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(184, 86, 64, 0.28) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(212, 168, 67, 0.10) 0%, transparent 50%),
+        linear-gradient(180deg, #0D0B09 0%, #070605 100%);
+      z-index: 1;
+    }
+    .hero-bg-onebar {
+      position: absolute;
+      right: -120px; top: 50%;
+      transform: translateY(-50%);
+      width: 720px; height: 720px;
+      opacity: 0.06;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-bg-grain {
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 4px);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-overlay, .hero-overlay-glow { display: none; }
+    .hero-status {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 24px 0;
+      gap: 16px;
+    }
+    @media (min-width: 768px) { .hero-status { padding: 32px 40px 0; } }
+    .hero-logo-mark { display: flex; align-items: center; gap: 12px; }
+    .hero-logo-mark img.onebar { height: 60px; width: auto; }
+    .hero-logo-mark img.rl {
+      height: 38px; width: auto;
+      filter: invert(1);
+      opacity: 0.92;
+    }
+    .hero-logo-mark .x {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+    .hero-status-badge { display: flex; align-items: center; gap: 8px; }
+    .hero-status-dot { width: 8px; height: 8px; border-radius: 50%; background: #5DC47A; }
+    .hero-status-text {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 24px 32px;
+      display: grid;
+      gap: 32px;
+    }
+    @media (min-width: 768px) { .hero-content { padding: 0 40px 48px; } }
+    @media (min-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
+    }
+    .hero-copy { display: flex; flex-direction: column; justify-content: flex-end; }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(232, 155, 126, 0.9);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      padding: 6px 14px;
+      border: 1px solid rgba(232, 155, 126, 0.3);
+      border-radius: 100px;
+      display: inline-block;
+      background: rgba(184, 86, 64, 0.08);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(to right, #E89B7E 0%, #B85640 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+      font-weight: 500;
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      max-width: 460px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .hero-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .hero-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.78);
+    }
+    .hero-check svg { color: #E89B7E; flex-shrink: 0; }
+    .hero-form-card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    .hero-form-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .hero-form-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .hero-form-card .prepared-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .hero-form-card .prepared-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-form-card .prepared-row img {
+      height: 34px;
+      width: auto;
+      border-radius: 8px;
+      background: #fff;
+      padding: 3px;
+    }
+    .hero-form-card .prepared-name {
+      font-size: 15px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .hero-form-card .prepared-date {
+      font-size: 12px;
+      color: rgba(255,255,255,0.42);
+      margin-top: 4px;
+    }
+    .hero-form-card .rl-stamp img {
+      height: 38px;
+      width: auto;
+      opacity: 0.95;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { margin-top: 24px; }
+    @media (min-width: 768px) { .trust-bar { margin-top: 32px; } }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .trust-grid { grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    }
+    .trust-item { text-align: center; }
+    .trust-value {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    @media (min-width: 768px) { .trust-value { font-size: 32px; } }
+    .trust-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 80px 0; }
+    @media (min-width: 768px) { .section { padding: 112px 0; } }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px) { .section-title { font-size: 40px; } }
+    .section-title em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .section-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 640px;
+      line-height: 1.65;
+      margin-bottom: 48px;
+    }
+
+    /* ── CARD GRIDS ── */
+    .card-grid-2, .card-grid-3, .card-grid-4 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 768px) {
+      .card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .card-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .feature-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(20, 18, 16, 0.04);
+    }
+    .feature-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(184, 86, 64, 0.14) 0%, rgba(184, 86, 64, 0.04) 100%);
+      border: 1px solid rgba(184, 86, 64, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--accent);
+    }
+    .feature-card h3 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .feature-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── FUNNEL FLOW / TIMELINE ── */
+    .funnel-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 40px 0;
+    }
+    @media (min-width: 768px) { .funnel-flow { flex-direction: row; align-items: flex-start; } }
+    .funnel-step {
+      flex: 1;
+      text-align: center;
+      padding: 20px 12px;
+    }
+    .funnel-step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .funnel-step h4 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .funnel-step p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .funnel-arrow {
+      font-size: 18px;
+      color: rgba(20,18,16,0.18);
+      display: none;
+      align-self: center;
+      padding-top: 8px;
+    }
+    @media (min-width: 768px) { .funnel-arrow { display: block; } }
+
+    /* ── INFO BOX ── */
+    .info-box {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px;
+    }
+    .info-box-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(184, 86, 64, 0.14) 0%, rgba(184, 86, 64, 0.04) 100%);
+      border: 1px solid rgba(184, 86, 64, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .info-box h4 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .info-box p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .info-box a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .info-box a:hover { text-decoration: underline; }
+    @media (max-width: 767px) { .info-box { flex-direction: column; } }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--accent-soft);
+      border: 1px solid rgba(184, 86, 64, 0.14);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .highlight-box h4 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .highlight-box p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── BRAND BREAKDOWN ROWS ── */
+    .breakdown-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 56px;
+      padding-top: 56px;
+      border-top: 1px solid var(--border);
+    }
+    .breakdown-row:first-of-type { border-top: none; padding-top: 0; margin-top: 48px; }
+    @media (min-width: 900px) {
+      .breakdown-row { grid-template-columns: 1.1fr 1fr; gap: 64px; }
+      .breakdown-row.reverse .breakdown-image { order: 2; }
+      .breakdown-row.reverse .breakdown-copy { order: 1; }
+    }
+    .breakdown-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-white);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(20,18,16,0.06);
+    }
+    .breakdown-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .breakdown-copy { padding: 8px 0; }
+    .breakdown-copy .concept-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(184, 86, 64, 0.18);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .breakdown-copy h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+    }
+    .breakdown-copy h3 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .breakdown-copy > p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .breakdown-copy .what-it-is {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .breakdown-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .breakdown-list li {
+      padding: 10px 0;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(20,18,16,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.55;
+    }
+    .breakdown-list li:last-child { border-bottom: none; }
+    .breakdown-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+    }
+    .breakdown-origin {
+      margin-top: 22px;
+      padding: 14px 16px;
+      background: rgba(20,18,16,0.04);
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    /* ── PARTNER TRIAD ── */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    @media (min-width: 768px) { .partner-grid { grid-template-columns: repeat(3, 1fr); } }
+    .partner-card {
+      background: var(--bg-dark);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
+      color: var(--text-inverse);
+      position: relative;
+      overflow: hidden;
+    }
+    .partner-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(184,86,64,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .partner-flag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #E89B7E;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .partner-name {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+      position: relative;
+      letter-spacing: -0.01em;
+    }
+    .partner-loc {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .partner-role {
+      font-size: 13px;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.65;
+      position: relative;
+    }
+
+    /* ── SERVICE TABLE ── */
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+    .service-table th {
+      text-align: left;
+      padding: 14px 18px;
+      background: rgba(20,18,16,0.04);
+      color: var(--text-muted);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .service-table th:last-child { text-align: right; }
+    .service-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(20,18,16,0.06);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .service-table td:first-child {
+      font-weight: 500;
+      color: var(--text-primary);
+      width: 32%;
+    }
+    .service-table td:last-child {
+      text-align: right;
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: 22%;
+    }
+
+    /* ── ROI METRICS ── */
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 40px;
+    }
+    @media (min-width: 768px) { .roi-grid { grid-template-columns: repeat(4, 1fr); } }
+    .roi-item { text-align: center; padding: 24px; }
+    .roi-value {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .roi-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── BANNER ── */
+    .section-banner {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .section-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .section-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 55%);
+    }
+    .section-banner-content {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      color: #fff;
+    }
+
+    /* ── VISION PANEL (logo statement, replaces photo banner) ── */
+    .vision-panel {
+      background: linear-gradient(135deg, #0D0B09 0%, #1A1510 100%);
+      border-radius: var(--radius-xl);
+      padding: 60px 48px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .vision-panel::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(184, 86, 64, 0.16) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .vision-panel::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(212, 168, 67, 0.08) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .vision-panel-logos {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 28px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .vision-panel-logos img.op-onebar { height: 64px; width: auto; }
+    .vision-panel-logos img.op-rl { height: 44px; width: auto; filter: invert(1); }
+    .vision-panel-logos .op-x {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.02em;
+    }
+    .vision-panel-statement {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      max-width: 820px;
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .vision-panel-rule {
+      height: 1px;
+      width: 80px;
+      background: linear-gradient(to right, var(--accent), transparent);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .vision-panel-signature {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      position: relative;
+    }
+    @media (max-width: 767px) {
+      .vision-panel { padding: 40px 28px; }
+      .vision-panel-logos { gap: 14px; }
+      .vision-panel-logos img.op-onebar { height: 52px; }
+      .vision-panel-logos img.op-rl { height: 34px; }
+    }
+
+    /* ── HARTFORD MAP / COMPETITOR BOX ── */
+    .market-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    @media (min-width: 768px) { .market-grid { grid-template-columns: repeat(3, 1fr); } }
+    .market-card {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      color: var(--text-inverse);
+      position: relative;
+      overflow: hidden;
+    }
+    .market-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 90px; height: 90px;
+      background: radial-gradient(circle, rgba(184,86,64,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: translate(20px, -20px);
+    }
+    .market-card .mc-flag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #E89B7E;
+      margin-bottom: 8px;
+    }
+    .market-card h4 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .market-card p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── REVENUE / BRAND HERO ── */
+    .brand-hero {
+      background: var(--bg-dark);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      color: var(--text-inverse);
+      position: relative;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .brand-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(184, 86, 64, 0.14) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .brand-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(212, 168, 67, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .brand-hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: #E89B7E;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .brand-hero h3 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+      margin-bottom: 12px;
+      color: #fff;
+      position: relative;
+    }
+    .brand-hero h3 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      background: linear-gradient(135deg, #E89B7E 0%, #D4A843 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .brand-hero-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      max-width: 640px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .brand-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      position: relative;
+    }
+    @media (min-width: 768px) { .brand-stats { grid-template-columns: repeat(4, 1fr); } }
+    .brand-stat {
+      border-left: 2px solid rgba(184,86,64,0.4);
+      padding-left: 16px;
+    }
+    .brand-stat-value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .brand-stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.38);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    /* ── RL WATERMARK RIBBON ── */
+    .rl-ribbon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 32px 0;
+      color: var(--text-muted);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .rl-ribbon img { height: 22px; opacity: 0.65; }
+    .rl-ribbon .dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+    /* ── CTA ── */
+    .cta-section { padding: 16px; }
+    .cta-card {
+      background: var(--bg-dark);
+      border-radius: var(--radius-xl);
+      padding: 64px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) { .cta-card { padding: 88px 40px; } }
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(184, 86, 64, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(212, 168, 67, 0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .cta-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 4px);
+      pointer-events: none;
+    }
+    .cta-logo-stack {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .cta-logo-stack img.onebar {
+      height: 56px; width: auto;
+      border-radius: 50%;
+      background: #fff;
+      padding: 5px;
+    }
+    .cta-logo-stack img.rl { height: 34px; opacity: 0.95; }
+    .cta-logo-stack .x {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .cta-card h2 {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      color: var(--text-inverse);
+      margin-bottom: 12px;
+      position: relative;
+      letter-spacing: -0.025em;
+    }
+    .cta-card h2 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: #E89B7E;
+    }
+    .cta-card p {
+      font-size: 15px;
+      color: rgba(245,241,232,0.55);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      position: relative;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .cta-buttons .pill-accent { padding: 14px 32px; font-size: 12px; }
+    .cta-buttons .pill-ghost {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .cta-buttons .pill-ghost:hover {
+      border-color: rgba(255,255,255,0.28);
+      color: #fff;
+    }
+    .cta-sub {
+      margin-top: 24px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.28);
+      position: relative;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FOOTER ── */
+    .footer { padding: 48px 0 32px; }
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 768px) {
+      .footer-top { flex-direction: row; align-items: center; justify-content: space-between; }
+    }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-brand img.onebar {
+      height: 44px; width: auto;
+      border-radius: 50%; background: #fff; padding: 4px;
+    }
+    .footer-brand img.rl { height: 28px; opacity: 0.85; }
+    .footer-brand .sep { width: 1px; height: 28px; background: var(--border); }
+    .footer-brand .note {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
+    }
+    .footer-bottom p { font-size: 11px; color: var(--text-faint); }
+    .footer-bottom a {
+      font-size: 11px;
+      color: rgba(20,18,16,0.4);
+      text-decoration: none;
+    }
+    .footer-bottom a:hover { color: var(--accent); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 767px) {
+      .hero-card { min-height: auto; padding-top: 60px; }
+      .hero h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+      .hero-content { gap: 24px; }
+      .section { padding: 56px 0; }
+      .section-title { font-size: 26px; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .trust-value { font-size: 22px; }
+      .card-grid-4 { grid-template-columns: 1fr !important; }
+      .card-grid-3 { grid-template-columns: 1fr !important; }
+      .card-grid-2 { grid-template-columns: 1fr !important; }
+      .partner-grid { grid-template-columns: 1fr !important; }
+      .mockup-grid { grid-template-columns: 1fr !important; }
+      .roi-grid { grid-template-columns: repeat(2, 1fr); }
+      .market-grid { grid-template-columns: 1fr !important; }
+      .brand-hero { padding: 32px 22px; }
+      .brand-stats { grid-template-columns: repeat(2, 1fr); }
+      .cta-card { padding: 48px 20px; }
+      .section-banner img { height: 240px; }
+    }
+
+    @media (max-width: 479px) {
+      .container-tight { padding-left: 1rem; padding-right: 1rem; }
+      .hero { padding: 8px 8px 0; }
+      .hero-card { border-radius: 16px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero-sub { font-size: 13px; }
+      .section-title { font-size: 22px; }
+      .cta-logo-stack img.onebar { height: 44px; }
+      .cta-logo-stack img.rl { height: 26px; }
+    }
+
+    /* ── ANIMATIONS ── */
+    [data-anim] {
+      opacity: 0;
+      transform: translateY(28px) scale(0.97);
+      will-change: opacity, transform;
+      transition:
+        opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-anim].visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    [data-anim="pop"] { transform: translateY(36px) scale(0.92); }
+    [data-anim="pop"].visible { transform: translateY(0) scale(1); }
+    [data-anim="float"] { transform: translateY(20px) scale(0.98); }
+    [data-anim="float"].visible { transform: translateY(0) scale(1); }
+    [data-anim="rise"] {
+      transform: translateY(48px) scale(0.94);
+      transition:
+        opacity 2.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-anim="rise"].visible { transform: translateY(0) scale(1); }
+    [data-anim="soft"] {
+      transform: translateY(16px);
+      transition:
+        opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-anim="soft"].visible { transform: translateY(0); }
+  </style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ TOP NAV — dual branding ═══════════════════════════════════ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand">
+      <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" title="One Bar Experience" class="onebar">
+      <span class="sep"></span>
+      <span class="partner">Prepared by</span>
+      <img src="media/rl-logo.png" alt="Recipe Labs" title="Recipe Labs" class="rl-logo">
+    </div>
+    <div class="topnav-actions">
+      <a href="#services" class="pill">Services</a>
+      <a href="#contact" class="pill pill-accent">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-bg-gradient"></div>
+    <img src="media/one-bar-logo-clean.png" alt="" class="hero-bg-onebar" loading="eager">
+    <div class="hero-bg-grain"></div>
+
+    <div class="hero-status">
+      <div class="hero-logo-mark">
+        <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" class="onebar">
+        <span class="x">×</span>
+        <img src="media/rl-logo.png" alt="Recipe Labs" class="rl" style="filter: invert(1) brightness(1.2);">
+      </div>
+      <div class="hero-status-badge">
+        <span class="hero-status-dot pulse-dot"></span>
+        <span class="hero-status-text">Project Overview</span>
+      </div>
+    </div>
+
+    <div style="flex:1;display:flex;align-items:flex-end;">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">A custom growth program for Hartford's most elevated bar.</p>
+          <h1>
+            One Bar <span class="accent">Experience</span><br>
+            reimagined for <span class="accent">2026</span>.
+          </h1>
+          <p class="hero-sub">
+            A complete digital, operational, and intelligence rollout: custom website, AI phone receptionist, social content engine, and a live market intelligence suite built for Hartford hospitality.
+          </p>
+          <div class="hero-checks">
+            <div class="hero-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Built around your brand, your voice, your Hartford audience
+            </div>
+            <div class="hero-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              AI phone agent that never misses a reservation or an order
+            </div>
+            <div class="hero-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Live competitive intel on WeHa, Stamford, and beyond
+            </div>
+          </div>
+          <div style="margin-top:8px;">
+            <a href="#services" class="pill pill-accent" style="padding:14px 32px;font-size:12px;text-decoration:none;">See the Full Menu of Services ↓</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="hero-form-card">
+            <div class="hero-form-title">Hartford Hospitality Growth Program</div>
+            <div class="hero-form-sub">Website · AI Phone · Content · Intelligence</div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 16px;">
+              <span class="prepared-label">Prepared for</span>
+              <div class="prepared-row">
+                <img src="media/one-bar-logo-clean.png" alt="One Bar">
+                <div>
+                  <div class="prepared-name">One Bar Experience</div>
+                  <div class="prepared-date">70 Union Pl · Hartford, CT</div>
+                </div>
+              </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; margin-top: 16px;">
+              <span class="prepared-label">Prepared by</span>
+              <div class="prepared-row">
+                <div class="rl-stamp"><img src="media/rl-symbol.png" alt="Recipe Labs"></div>
+                <div>
+                  <div class="prepared-name">Recipe Labs</div>
+                  <div class="prepared-date">madebyrecipe.com · April 2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Metrics -->
+<div class="container-tight trust-bar">
+  <div class="card-glass" style="padding: 24px 32px;">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-value">4,959</div>
+        <div class="trust-label">Instagram Followers</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-value">109</div>
+        <div class="trust-label">Posts Published</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-value">6 Nights</div>
+        <div class="trust-label">Programming / Week</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-value">70 Union Pl</div>
+        <div class="trust-label">Hartford Flagship</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════ THE VISION ═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container-tight">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;">
+      <div style="max-width:620px;">
+        <p class="section-label">The Vision</p>
+        <h2 class="section-title" style="margin-bottom:0;">Make One Bar the <em>flagship</em> hospitality brand of Hartford.</h2>
+      </div>
+      <a href="#services" class="pill" style="text-decoration:none;">Jump to Services</a>
+    </div>
+
+    <div class="vision-panel">
+      <div class="vision-panel-logos">
+        <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" class="op-onebar">
+        <span class="op-x">In partnership with</span>
+        <img src="media/rl-logo.png" alt="Recipe Labs" class="op-rl">
+      </div>
+      <p class="vision-panel-statement">
+        Hartford has the audience. One Bar has the room, the events, and the crew. The missing layer is the digital infrastructure that makes the brand impossible to ignore.
+      </p>
+      <div class="vision-panel-rule"></div>
+      <div class="vision-panel-signature">
+        <span>A Recipe Labs × One Bar Experience program</span>
+        <span>Hartford, CT · 2026</span>
+      </div>
+    </div>
+
+    <div class="card-grid-4">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="layout-dashboard" size="22"></i></div>
+        <h3>Custom Website</h3>
+        <p>A Hartford-centric site that captures reservations, pushes events, and sells the room before guests ever walk in.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="phone-call" size="22"></i></div>
+        <h3>AI Receptionist</h3>
+        <p>A 24/7 AI phone agent that answers calls, takes orders, books tables, and routes anything complex to staff.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="radar" size="22"></i></div>
+        <h3>Intelligence Suite</h3>
+        <p>Live market reports on WeHa, Stamford, and every competing bar. Know what they post, charge, and book every week.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="clapperboard" size="22"></i></div>
+        <h3>Content Engine</h3>
+        <p>Event reels, bartender cinematics, and weekly drops that turn every night into shareable content for Hartford's feed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+<!-- RL ribbon watermark -->
+<div class="container-tight rl-ribbon">
+  <span>Program curated by</span>
+  <img src="media/rl-logo.png" alt="Recipe Labs">
+  <span class="dot"></span>
+  <span>For One Bar Experience · Hartford, CT</span>
+</div>
+
+
+<!-- ═══════════════════════════════ BRAND SHOWCASE ═══════════════════════════════ -->
+<section class="section" style="padding-top:40px;">
+  <div class="container-tight">
+    <p class="section-label">Brand in Motion</p>
+    <h2 class="section-title">What the new One Bar universe <em>looks like</em>.</h2>
+    <div class="section-desc">
+      Four early concept boards, generated as directional references to ground the conversation. Each one represents a piece of the brand system Recipe Labs would design, build, and roll out. These are sparks, not deliverables.
+    </div>
+
+    <!-- Concept 01 — Brand System / Stationery -->
+    <div class="breakdown-row">
+      <div class="breakdown-image">
+        <img src="media/mockup-stationery.png" alt="One Bar brand strategy, journal, print and merchandise reference">
+      </div>
+      <div class="breakdown-copy">
+        <span class="concept-tag">Concept 01 · Brand System</span>
+        <h3>A complete brand world, not just a <em>logo</em>.</h3>
+        <p>
+          Print collateral, a signature quarterly brand journal, branded business cards, thumb drives, coasters, and client onboarding guides. Everything a guest, partner, or press contact touches reinforces the same elevated identity.
+        </p>
+        <p class="what-it-is">What Recipe Labs would build out</p>
+        <ul class="breakdown-list">
+          <li>Full brand guideline document: type, color, logo usage, voice</li>
+          <li>Printed menus, private-event folios, VIP welcome kits</li>
+          <li>Quarterly One Collective journal for regulars and private-event clients</li>
+          <li>Business cards, coasters, branded merch drops tied to events</li>
+          <li>Partner and press one-pager template</li>
+        </ul>
+        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would convert this intent into a fully designed brand system, production-ready.</div>
+      </div>
+    </div>
+
+    <!-- Concept 02 — Menu Design -->
+    <div class="breakdown-row reverse">
+      <div class="breakdown-image">
+        <img src="media/mockup-menu.png" alt="One Bar custom menu layout showing signature cocktails, curated wine list, nightly small bites">
+      </div>
+      <div class="breakdown-copy">
+        <span class="concept-tag">Concept 02 · Menu Design</span>
+        <h3>A menu that sells the <em>experience</em>, not just the drink.</h3>
+        <p>
+          Three-panel menu system: signature cocktails, curated wine, nightly small bites. Designed with custom typography, subtle logo placement, and pricing architecture that anchors premium perception from the first page.
+        </p>
+        <p class="what-it-is">What Recipe Labs would build out</p>
+        <ul class="breakdown-list">
+          <li>Printed menu book + one-page table menus</li>
+          <li>Interactive digital menu on the website with photography</li>
+          <li>QR table-scan menu for quick mobile view</li>
+          <li>Seasonal rollover system so menus refresh without a reprint cycle</li>
+          <li>Copywriting for every drink and plate in the One Bar voice</li>
+        </ul>
+        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would turn this into a production menu system across print, web, and in-room display.</div>
+      </div>
+    </div>
+
+    <!-- Concept 03 — Editorial / Events -->
+    <div class="breakdown-row">
+      <div class="breakdown-image">
+        <img src="media/mockup-collective.png" alt="One Bar editorial spread for curated events, private occasions, and mixology masterclasses">
+      </div>
+      <div class="breakdown-copy">
+        <span class="concept-tag">Concept 03 · Editorial &amp; Events</span>
+        <h3>Every event, a <em>campaign</em>.</h3>
+        <p>
+          Curated events, private occasions, mixology masterclasses. Four pillars that each get their own editorial treatment, photography direction, and booking flow. Instead of flat flyers, One Bar nights feel like magazine features.
+        </p>
+        <p class="what-it-is">What Recipe Labs would build out</p>
+        <ul class="breakdown-list">
+          <li>Editorial page templates for R&amp;B Fridays, Comedy Experience, Round Robin, NYE</li>
+          <li>Private event booking engine with deposit capture and proposal PDFs</li>
+          <li>Mixology masterclass enrollment with payment and reminders</li>
+          <li>On-brand photo direction for every event captured on the ground</li>
+          <li>Post-event recap articles for SEO and press</li>
+        </ul>
+        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would turn the spirit of this board into a real editorial + booking system tied to the website.</div>
+      </div>
+    </div>
+
+    <!-- Concept 04 — Digital Ecosystem -->
+    <div class="breakdown-row reverse">
+      <div class="breakdown-image">
+        <img src="media/mockup-virtual.png" alt="One Bar digital ecosystem reference showing responsive website, mobile ordering, virtual tables, interactive floor plan">
+      </div>
+      <div class="breakdown-copy">
+        <span class="concept-tag">Concept 04 · Digital Ecosystem</span>
+        <h3>One brand, every <em>screen</em>.</h3>
+        <p>
+          Responsive website, mobile ordering, virtual tables, and an interactive floor plan. The digital side of One Bar mirrors the physical room: curated, elevated, and effortless. Guests move from Instagram to reservation to in-room without a single dead end.
+        </p>
+        <p class="what-it-is">What Recipe Labs would build out</p>
+        <ul class="breakdown-list">
+          <li>Full custom website (desktop + mobile) with reservations and event pages</li>
+          <li>Mobile ordering flow for pickup and pre-arrival drink orders</li>
+          <li>Interactive floor plan for private-event seat selection</li>
+          <li>Virtual table / waitlist module for busy nights</li>
+          <li>Tight integration with the AI phone receptionist and CRM</li>
+        </ul>
+        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would engineer this into the real website, ordering, and reservation stack.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ WEBSITE BUILD ═══════════════════════════════ -->
+<section class="section" id="website">
+  <div class="container-tight">
+    <p class="section-label">Service 01 · Website Design</p>
+    <h2 class="section-title">A site that looks like the bar, not like a <em>template</em>.</h2>
+    <div class="section-desc">
+      Most Hartford venues hide behind cookie-cutter sites that undersell the room. We build you a custom, cinematic site that looks and feels like walking into One Bar — with every feature a modern hospitality brand should have.
+    </div>
+
+    <div class="card-grid-3">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="calendar-check" size="22"></i></div>
+        <h3>Reservations &amp; Private Events</h3>
+        <p>Online booking for regular tables, private sections, and buyouts. Deposit capture, custom confirmation emails, and calendar sync.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="sparkles" size="22"></i></div>
+        <h3>Event Calendar</h3>
+        <p>R&amp;B Fridays, Round Robin, Comedy Experience, RnB NYE. Every night promoted with its own hero, RSVP, and countdown.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="wine" size="22"></i></div>
+        <h3>Digital Menu</h3>
+        <p>Signature cocktails, wine, and small bites with rich photography, QR for in-room scan, and seasonal menu rollovers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="graduation-cap" size="22"></i></div>
+        <h3>Mixology Masterclasses</h3>
+        <p>Sell-out classes with booking, payment, and automated reminders. A new monthly revenue stream tied to the brand.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="image" size="22"></i></div>
+        <h3>Gallery &amp; Press</h3>
+        <p>An editorial gallery of nights, guests, and partnerships. Built to pull from Instagram automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="search" size="22"></i></div>
+        <h3>Hartford SEO</h3>
+        <p>Structured for "best bar Hartford," "Hartford cocktail lounge," "R&amp;B night Hartford" and long-tail local search.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Why this matters</h4>
+      <p>Right now, if a guest Googles One Bar after seeing an Instagram reel, the search trail dies. No reservations, no private-event inquiry, no press capture. A custom site is the conversion layer that turns the audience you already have into measurable revenue.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ AI RECEPTIONIST ═══════════════════════════════ -->
+<section class="section" id="ai-phone">
+  <div class="container-tight">
+    <p class="section-label">Service 02 · AI Phone Agent</p>
+    <h2 class="section-title">An AI receptionist that <em>never</em> misses a call.</h2>
+    <div class="section-desc">
+      Your bartenders shouldn't be stopping service to answer the phone. Recipe Labs deploys a branded AI voice agent that answers every call, takes orders, books reservations, and handles FAQs in One Bar's tone of voice.
+    </div>
+
+    <div class="brand-hero">
+      <div class="brand-hero-eyebrow">Live voice intelligence</div>
+      <h3>Every call answered. Every reservation captured. <em>Every time.</em></h3>
+      <p class="brand-hero-sub">
+        The AI picks up on the first ring, greets the guest by the One Bar brand voice, handles the request, and books directly into the POS or reservation system. Complex calls route straight to the manager's line.
+      </p>
+      <div class="brand-stats">
+        <div class="brand-stat">
+          <div class="brand-stat-value">24 / 7</div>
+          <div class="brand-stat-label">Always Available</div>
+        </div>
+        <div class="brand-stat">
+          <div class="brand-stat-value">&lt; 1 sec</div>
+          <div class="brand-stat-label">Pickup Time</div>
+        </div>
+        <div class="brand-stat">
+          <div class="brand-stat-value">100%</div>
+          <div class="brand-stat-label">Calls Transcribed</div>
+        </div>
+        <div class="brand-stat">
+          <div class="brand-stat-value">0</div>
+          <div class="brand-stat-label">Missed Reservations</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-grid-4" style="margin-top:40px;">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="calendar" size="22"></i></div>
+        <h3>Reservations</h3>
+        <p>Books directly into your system. Confirms party size, time, and seating preference.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="utensils" size="22"></i></div>
+        <h3>Takes Orders</h3>
+        <p>Pickup orders for the kitchen, drink pre-orders for table arrival, and group buyouts.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="help-circle" size="22"></i></div>
+        <h3>Answers FAQs</h3>
+        <p>Hours, dress code, parking, event lineup, menu questions, private-event pricing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="message-square" size="22"></i></div>
+        <h3>SMS &amp; Follow-up</h3>
+        <p>Automatic text confirmations, reminders, and review requests once guests leave.</p>
+      </div>
+    </div>
+
+    <div class="funnel-flow card-glass" style="padding: 16px; margin-top: 32px;">
+      <div class="funnel-step">
+        <div class="funnel-step-num">1</div>
+        <h4>Guest Calls</h4>
+        <p>Rings once, AI picks up with One Bar greeting</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">2</div>
+        <h4>Intent Captured</h4>
+        <p>Reservation, order, question, or event inquiry</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">3</div>
+        <h4>Action Taken</h4>
+        <p>Booking made, order sent, answer delivered</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">4</div>
+        <h4>Handoff or Close</h4>
+        <p>Confirmation text sent, manager notified if needed</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">5</div>
+        <h4>Logged</h4>
+        <p>Transcript and outcome stored in dashboard</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ INTELLIGENCE SUITE ═══════════════════════════════ -->
+<section class="section" id="intelligence">
+  <div class="container-tight">
+    <p class="section-label">Service 03 · Intelligence Suite</p>
+    <h2 class="section-title">Know what the rest of Hartford is <em>doing</em>.</h2>
+    <div class="section-desc">
+      The same competitive intelligence Recipe Labs built for its own operations — now pointed at Hartford, West Hartford, Stamford, and every venue competing for your guests' Friday night. Delivered as a private dashboard plus weekly briefings.
+    </div>
+
+    <div class="market-grid">
+      <div class="market-card">
+        <div class="mc-flag">Competitor Tracking</div>
+        <h4>WeHa, Stamford, Hartford</h4>
+        <p>Who's posting. What's trending. Which events are selling out. Which prices are moving.</p>
+      </div>
+      <div class="market-card">
+        <div class="mc-flag">Content Gap Analysis</div>
+        <h4>What you're missing</h4>
+        <p>Side-by-side engagement breakdowns so every content decision is backed by live data, not guesswork.</p>
+      </div>
+      <div class="market-card">
+        <div class="mc-flag">Audience Intelligence</div>
+        <h4>Who's showing up</h4>
+        <p>Demographics, repeat guests, spend patterns. Know your regulars by cohort, not just by name.</p>
+      </div>
+    </div>
+
+    <div class="card-grid-3" style="margin-top:40px;">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="bar-chart-3" size="22"></i></div>
+        <h3>Weekly Hartford Report</h3>
+        <p>A branded PDF brief every Monday. Top competitor moves, your engagement benchmarks, and the single highest-leverage action for the week.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="gauge" size="22"></i></div>
+        <h3>Live Dashboard</h3>
+        <p>Always-on view of booking velocity, AI phone outcomes, content performance, and competitor activity, in one private URL.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="file-search" size="22"></i></div>
+        <h3>Smart Packages</h3>
+        <p>Quarterly deep-dives: Hartford market report, event benchmarking, pricing audits, and guest sentiment analysis.</p>
+      </div>
+    </div>
+
+    <div class="info-box card-glass" style="margin-top: 32px;">
+      <div class="info-box-icon"><i data-lucide="sparkles" size="22"></i></div>
+      <div>
+        <h4>This is the Recipe Labs difference</h4>
+        <p>
+          Most agencies hand you a website and disappear. Recipe Labs keeps an active intelligence layer running on your market — every week. The same stack we use internally to grow our own portfolio is now pointed at Hartford hospitality for One Bar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ CONTENT ENGINE ═══════════════════════════════ -->
+<section class="section" id="content">
+  <div class="container-tight">
+    <p class="section-label">Service 04 · Content Engine</p>
+    <h2 class="section-title">Turn every night into <em>shareable</em> content.</h2>
+    <div class="section-desc">
+      The audience already exists. 109 posts and almost 5,000 followers is a strong foundation. The unlock is consistent, cinematic content that matches the quality of the room and pulls new guests out of WeHa and the surrounding metros.
+    </div>
+
+    <div class="card-grid-4">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="video" size="22"></i></div>
+        <h3>Weekly Reels</h3>
+        <p>Shot-list, on-site capture, and edit for every featured night. Bartender cinematics, crowd shots, signature drinks.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="megaphone" size="22"></i></div>
+        <h3>Event Promo</h3>
+        <p>Flyers, Instagram-native animated posts, and countdown stories built to pull reservations, not just likes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="users" size="22"></i></div>
+        <h3>Creator Pipeline</h3>
+        <p>Recurring partnerships with Hartford creators to keep One Bar top of mind in the local culture conversation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="rewind" size="22"></i></div>
+        <h3>Recaps &amp; Stories</h3>
+        <p>Monday morning recap reels, Sunday brunch teasers, Thursday "tonight" drops. Built into a posting rhythm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ WHY RECIPE LABS ═══════════════════════════════ -->
+<section class="section" id="why-us">
+  <div class="container-tight">
+    <p class="section-label">Why Recipe Labs</p>
+    <h2 class="section-title">Three partners. Three time zones. <em>One growth engine.</em></h2>
+    <div class="section-desc">
+      Recipe Labs runs with operators on the ground in the markets that matter. That means on-demand global intelligence, around-the-clock responsiveness, and a design team that has built for hospitality, retail, dealerships, nonprofits, and live events.
+    </div>
+
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="partner-flag">Los Angeles</div>
+        <div class="partner-name">AJ</div>
+        <div class="partner-loc">West Coast · Creative</div>
+        <p class="partner-role">
+          Creative direction, campaign design, and the cultural eye for what resonates nationally. AJ connects One Bar's brand into the West Coast aesthetic conversation and sources inspiration the East Coast hasn't seen yet.
+        </p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-flag">Connecticut</div>
+        <div class="partner-name">Aaron</div>
+        <div class="partner-loc">Hartford · On the Ground</div>
+        <p class="partner-role">
+          Your local partner. Aaron is in Hartford, walks your market, knows the venues, understands the scene. He handles the in-person relationship, content capture, and the hands-on side of every deliverable.
+        </p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-flag">Global · Mobile</div>
+        <div class="partner-name">Simeon</div>
+        <div class="partner-loc">Build &amp; Systems</div>
+        <p class="partner-role">
+          Technical architecture, AI systems, data pipelines, and the engineering side of every product. Mobile and global. Available whenever the system needs a move, not just in business hours.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:40px;">
+      <h4>What this structure actually buys you</h4>
+      <p>
+        On-demand information from three markets feeding back into every design and operational decision for One Bar. You don't just get a site — you get a living team that treats your growth like their own. That's the Recipe Labs version of cooking.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ GROWTH PATH ═══════════════════════════════ -->
+<section class="section">
+  <div class="container-tight">
+    <p class="section-label">Engagement Path</p>
+    <h2 class="section-title">From first call to live brand in <em>weeks</em>.</h2>
+    <div class="section-desc">
+      A clean, phased rollout designed around your existing calendar. No disruption to service, no long freeze on operations. Each phase unlocks revenue before the next one starts.
+    </div>
+
+    <div class="funnel-flow card-glass" style="padding: 16px;">
+      <div class="funnel-step">
+        <div class="funnel-step-num">1</div>
+        <h4>Brand Audit</h4>
+        <p>Hartford intel sweep, competitor snapshot, and scope confirmation</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">2</div>
+        <h4>Site + Phone Deploy</h4>
+        <p>Custom website live, AI receptionist ringing on day one</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">3</div>
+        <h4>Content Engine</h4>
+        <p>First event shoot, first reels out, posting rhythm locked</p>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-step-num">4</div>
+        <h4>Intelligence Loop</h4>
+        <p>Weekly Hartford report, live dashboard, monthly growth review</p>
+      </div>
+    </div>
+
+    <div class="roi-grid" style="margin-top: 56px;">
+      <div class="card-glass roi-item">
+        <div class="roi-value">1 Site</div>
+        <div class="roi-label">Custom Hartford-First</div>
+      </div>
+      <div class="card-glass roi-item">
+        <div class="roi-value">AI Phone</div>
+        <div class="roi-label">Live Receptionist</div>
+      </div>
+      <div class="card-glass roi-item">
+        <div class="roi-value">Weekly</div>
+        <div class="roi-label">Market Intelligence</div>
+      </div>
+      <div class="card-glass roi-item">
+        <div class="roi-value">3 Partners</div>
+        <div class="roi-label">Three Time Zones</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ SERVICES MENU ═══════════════════════════════ -->
+<section class="section" id="services">
+  <div class="container-tight">
+    <p class="section-label">Menu of Services</p>
+    <h2 class="section-title">A living menu, sized to <em>your</em> appetite.</h2>
+    <div class="section-desc">
+      Pick any combination. Start with the website and AI phone, layer in intelligence and content as the brand grows. Scope and investment are shaped on a call — every number depends on current system integrations, API partners, and the specific scale One Bar wants to hit.
+    </div>
+
+    <div class="card-glass" style="padding: 28px;">
+      <table class="service-table">
+        <tr><th>Service</th><th>What You Get</th><th>Format</th></tr>
+        <tr>
+          <td>Custom Website</td>
+          <td>Hartford-SEO site, reservations, event calendar, digital menu, mixology classes, gallery, press capture</td>
+          <td>One-time + care</td>
+        </tr>
+        <tr>
+          <td>AI Phone Receptionist</td>
+          <td>24/7 voice agent, reservations, orders, FAQ, SMS follow-up, transcript dashboard</td>
+          <td>Setup + monthly</td>
+        </tr>
+        <tr>
+          <td>Hartford Intelligence Suite</td>
+          <td>Competitor tracking, weekly brief, live dashboard, quarterly smart packages</td>
+          <td>Monthly subscription</td>
+        </tr>
+        <tr>
+          <td>Content Engine</td>
+          <td>Event reels, flyer design, weekly posting rhythm, creator partnerships</td>
+          <td>Monthly retainer</td>
+        </tr>
+        <tr>
+          <td>Brand System Refinement</td>
+          <td>Print collateral, menu design refresh, photo direction, signage, merch concepts</td>
+          <td>Project-based</td>
+        </tr>
+        <tr>
+          <td>Event &amp; Masterclass Ops</td>
+          <td>Booking, payment, reminders, post-event follow-up for mixology classes and private events</td>
+          <td>Project + usage</td>
+        </tr>
+        <tr>
+          <td>CRM &amp; Guest Intelligence</td>
+          <td>Guest database, repeat visit tracking, birthday &amp; anniversary automations, VIP flags</td>
+          <td>Setup + monthly</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="info-box card-glass" style="margin-top: 24px;">
+      <div class="info-box-icon"><i data-lucide="message-circle" size="22"></i></div>
+      <div>
+        <h4>Why investment is not listed here</h4>
+        <p>
+          Every line item is shaped by what's already in place, what needs to integrate, and what scale you want to run at. The honest answer is a 20-minute conversation beats any generic pricing sheet. Book a call with Recipe Labs and we'll build a precise scope the same week.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container-tight"><div class="section-divider"></div></div>
+
+
+<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<section class="cta-section" id="contact">
+  <div class="cta-card">
+    <div class="cta-logo-stack">
+      <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" class="onebar">
+      <span class="x">×</span>
+      <img src="media/rl-logo.png" alt="Recipe Labs" class="rl" style="filter: invert(1);">
+    </div>
+    <h2>Let's build the <em>next</em> chapter of One Bar.</h2>
+    <p>The website. The AI phone. The content. The intelligence. A Hartford hospitality brand engineered end to end.</p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/contact-madebyrecipe/30min" target="_blank" rel="noopener" class="pill pill-accent">Book Strategy Call →</a>
+      <a href="mailto:lance@madebyrecipe.com?subject=One%20Bar%20Experience%20%E2%80%94%20Recipe%20Labs%20Overview" class="pill-ghost">Email Recipe Labs</a>
+    </div>
+    <p class="cta-sub">lance@madebyrecipe.com · madebyrecipe.com · Recipe Labs × One Bar Experience</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="footer">
+  <div class="container-tight">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" class="onebar">
+        <span class="sep"></span>
+        <img src="media/rl-logo.png" alt="Recipe Labs" class="rl">
+        <span class="sep"></span>
+        <span class="note">Prepared by Recipe Labs · April 2026</span>
+      </div>
+      <div class="footer-links">
+        <a href="#website">Website</a>
+        <a href="#ai-phone">AI Phone</a>
+        <a href="#intelligence">Intelligence</a>
+        <a href="#content">Content</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 One Bar Experience · 70 Union Pl, Hartford, CT · Confidential project overview</p>
+      <a href="https://madebyrecipe.com" target="_blank" rel="noopener">Built by Recipe Labs — madebyrecipe.com</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -60px 0px' });
+
+  const reveal = (selector, type = 'default', stagger = 0.18) => {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      el.setAttribute('data-anim', type);
+      el.style.transitionDelay = `${i * stagger}s`;
+      observer.observe(el);
+    });
+  };
+
+  reveal('.section-title', 'soft', 0);
+  reveal('.section-label', 'soft', 0);
+  reveal('.section-desc', 'soft', 0);
+  reveal('.trust-grid', 'soft', 0);
+  reveal('.card-grid-4 .feature-card', 'pop', 0.18);
+  reveal('.card-grid-3 .feature-card', 'float', 0.2);
+  reveal('.funnel-step', 'float', 0.22);
+  reveal('.info-box', 'default', 0);
+  reveal('.highlight-box', 'soft', 0);
+  reveal('.breakdown-row', 'rise', 0.15);
+  reveal('.vision-panel', 'rise', 0);
+  reveal('.partner-card', 'rise', 0.3);
+  reveal('.market-card', 'pop', 0.2);
+  reveal('.roi-item', 'float', 0.18);
+  reveal('.brand-hero', 'rise', 0);
+  reveal('.brand-stat', 'float', 0.2);
+  reveal('.cta-card', 'rise', 0);
+  reveal('.section-banner', 'rise', 0);
+</script>
+</body>
+</html>
