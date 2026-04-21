@@ -869,6 +869,69 @@
       line-height: 1.55;
     }
 
+    /* ── DESIGN FEATURE — one main image with orbital sub-photos ── */
+    .design-feature { position: relative; padding: 0; background: transparent; box-shadow: none; border: none; }
+    .design-feature .main-mockup {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      display: block;
+    }
+    .design-feature .sub-mockup {
+      position: absolute;
+      width: 34%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      border: 3px solid var(--bg-primary);
+      background: #fff;
+    }
+    .design-feature .sub-top { top: -18px; left: -18px; }
+    .design-feature .sub-bottom { bottom: -18px; right: -18px; }
+    html[data-theme="dark"] .design-feature .sub-mockup { border-color: var(--bg-primary); }
+    @media (max-width: 767px) {
+      .design-feature .sub-mockup { width: 38%; }
+      .design-feature .sub-top { top: -10px; left: -10px; }
+      .design-feature .sub-bottom { bottom: -10px; right: -10px; }
+    }
+
+    /* ── DEV VISUAL — stack chips instead of photo ── */
+    .dev-visual {
+      background: #0A0A0B;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      min-height: 320px;
+    }
+    .dev-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .dev-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      color: #F5F1E8;
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .dev-note {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: rgba(245,241,232,0.45);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
     /* ── PARTNER TRIAD ── */
     .partner-grid {
       display: grid;
@@ -1033,24 +1096,14 @@
       gap: 32px;
     }
     .exp-side.day {
-      background: linear-gradient(155deg, #FCF9F2 0%, #F0EADF 100%);
+      background: #FAF6EE;
       color: #141210;
     }
     .exp-side.night {
-      background: linear-gradient(155deg, #0A0807 0%, #1A0605 100%);
+      background: #0A0807;
       color: #F5F1E8;
     }
-    .exp-side.day::before,
-    .exp-side.night::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 360px; height: 360px;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .exp-side.day::before { background: radial-gradient(circle, rgba(227, 6, 19, 0.08) 0%, transparent 60%); }
-    .exp-side.night::before { background: radial-gradient(circle, rgba(227, 6, 19, 0.32) 0%, transparent 60%); }
+    .exp-side.day::before, .exp-side.night::before { display: none; }
     .exp-side .exp-clock {
       display: inline-flex;
       align-items: center;
@@ -1930,100 +1983,80 @@
 <section class="section" style="padding-top:40px;">
   <div class="container-tight">
     <p class="section-label">Brand in Motion</p>
-    <h2 class="section-title">What the new One Bar universe <em>looks like</em>.</h2>
+    <h2 class="section-title">What Recipe Labs actually <em>does</em> for One Bar.</h2>
     <div class="section-desc">
-      Four early concept boards, generated as directional references to ground the conversation. Each one represents a piece of the brand system Recipe Labs would design, build, and roll out. These are sparks, not deliverables.
+      Three tight capabilities, nothing more. Visual design for the whole brand. Curated event design for every night on the calendar. And full custom development that ties it all together.
     </div>
 
-    <!-- Concept 01 — Brand System / Stationery -->
+    <!-- Concept 01 — Design: One Brand, Every Screen (featured with sub-photos) -->
     <div class="breakdown-row">
-      <div class="breakdown-image">
-        <img src="media/mockup-stationery.png" alt="One Bar brand strategy, journal, print and merchandise reference">
+      <div class="breakdown-image design-feature">
+        <img src="media/mockup-virtual.png" alt="One Bar digital ecosystem — responsive website, mobile, interactive floor plan" class="main-mockup">
+        <img src="media/mockup-stationery.png" alt="Brand collateral" class="sub-mockup sub-top">
+        <img src="media/mockup-menu.png" alt="Menu system" class="sub-mockup sub-bottom">
       </div>
       <div class="breakdown-copy">
-        <span class="concept-tag">Concept 01 · Brand System</span>
-        <h3>A complete brand world, not just a <em>logo</em>.</h3>
-        <p>
-          Print collateral, a signature quarterly brand journal, branded business cards, thumb drives, coasters, and client onboarding guides. Everything a guest, partner, or press contact touches reinforces the same elevated identity.
-        </p>
-        <p class="what-it-is">What Recipe Labs would build out</p>
-        <ul class="breakdown-list">
-          <li>Full brand guideline document: type, color, logo usage, voice</li>
-          <li>Printed menus, private-event folios, VIP welcome kits</li>
-          <li>Quarterly One Collective journal for regulars and private-event clients</li>
-          <li>Business cards, coasters, branded merch drops tied to events</li>
-          <li>Partner and press one-pager template</li>
-        </ul>
-        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would convert this intent into a fully designed brand system, production-ready.</div>
-      </div>
-    </div>
-
-    <!-- Concept 02 — Menu Design -->
-    <div class="breakdown-row reverse">
-      <div class="breakdown-image">
-        <img src="media/mockup-menu.png" alt="One Bar custom menu layout showing signature cocktails, curated wine list, nightly small bites">
-      </div>
-      <div class="breakdown-copy">
-        <span class="concept-tag">Concept 02 · Menu Design</span>
-        <h3>A menu that sells the <em>experience</em>, not just the drink.</h3>
-        <p>
-          Three-panel menu system: signature cocktails, curated wine, nightly small bites. Designed with custom typography, subtle logo placement, and pricing architecture that anchors premium perception from the first page.
-        </p>
-        <p class="what-it-is">What Recipe Labs would build out</p>
-        <ul class="breakdown-list">
-          <li>Printed menu book + one-page table menus</li>
-          <li>Interactive digital menu on the website with photography</li>
-          <li>QR table-scan menu for quick mobile view</li>
-          <li>Seasonal rollover system so menus refresh without a reprint cycle</li>
-          <li>Copywriting for every drink and plate in the One Bar voice</li>
-        </ul>
-        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would turn this into a production menu system across print, web, and in-room display.</div>
-      </div>
-    </div>
-
-    <!-- Concept 03 — Editorial / Events -->
-    <div class="breakdown-row">
-      <div class="breakdown-image">
-        <img src="media/mockup-collective.png" alt="One Bar editorial spread for curated events, private occasions, and mixology masterclasses">
-      </div>
-      <div class="breakdown-copy">
-        <span class="concept-tag">Concept 03 · Editorial &amp; Events</span>
-        <h3>Every event, a <em>campaign</em>.</h3>
-        <p>
-          Curated events, private occasions, mixology masterclasses. Four pillars that each get their own editorial treatment, photography direction, and booking flow. Instead of flat flyers, One Bar nights feel like magazine features.
-        </p>
-        <p class="what-it-is">What Recipe Labs would build out</p>
-        <ul class="breakdown-list">
-          <li>Editorial page templates for R&amp;B Fridays, Comedy Experience, Round Robin, NYE</li>
-          <li>Private event booking engine with deposit capture and proposal PDFs</li>
-          <li>Mixology masterclass enrollment with payment and reminders</li>
-          <li>On-brand photo direction for every event captured on the ground</li>
-          <li>Post-event recap articles for SEO and press</li>
-        </ul>
-        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would turn the spirit of this board into a real editorial + booking system tied to the website.</div>
-      </div>
-    </div>
-
-    <!-- Concept 04 — Digital Ecosystem -->
-    <div class="breakdown-row reverse">
-      <div class="breakdown-image">
-        <img src="media/mockup-virtual.png" alt="One Bar digital ecosystem reference showing responsive website, mobile ordering, virtual tables, interactive floor plan">
-      </div>
-      <div class="breakdown-copy">
-        <span class="concept-tag">Concept 04 · Digital Ecosystem</span>
+        <span class="concept-tag">01 · Design</span>
         <h3>One brand, every <em>screen</em>.</h3>
         <p>
-          Responsive website, mobile ordering, virtual tables, and an interactive floor plan. The digital side of One Bar mirrors the physical room: curated, elevated, and effortless. Guests move from Instagram to reservation to in-room without a single dead end.
+          Visual design for the entire One Bar universe, front to back. The website is the anchor. The menu, print collateral, signage, merch, and digital touchpoints all inherit from the same system. One voice, one aesthetic, every surface.
         </p>
-        <p class="what-it-is">What Recipe Labs would build out</p>
         <ul class="breakdown-list">
-          <li>Full custom website (desktop + mobile) with reservations and event pages</li>
-          <li>Mobile ordering flow for pickup and pre-arrival drink orders</li>
-          <li>Interactive floor plan for private-event seat selection</li>
-          <li>Virtual table / waitlist module for busy nights</li>
-          <li>Tight integration with the AI phone receptionist and CRM</li>
+          <li>Custom website: desktop, mobile, day/night mode</li>
+          <li>Digital + printed menu system that refreshes seasonally</li>
+          <li>Brand guidelines, signage, merch, and print collateral</li>
+          <li>Guest-facing UI that mirrors the room: curated, elevated, effortless</li>
         </ul>
-        <div class="breakdown-origin">Concept board created by One Bar in Google Gemini as a directional reference. Recipe Labs would engineer this into the real website, ordering, and reservation stack.</div>
+      </div>
+    </div>
+
+    <!-- Concept 02 — Events -->
+    <div class="breakdown-row reverse">
+      <div class="breakdown-image">
+        <img src="media/mockup-collective.png" alt="Curated event design for R&amp;B Fridays, Comedy Experience, private bookings">
+      </div>
+      <div class="breakdown-copy">
+        <span class="concept-tag">02 · Events</span>
+        <h3>Curated event menus, every <em>night</em>.</h3>
+        <p>
+          Every featured night on the calendar gets its own design treatment. R&amp;B Fridays, Comedy Experience, Round Robin, NYE, private buyouts, mixology masterclasses. Flyer, digital menu, landing page, reservation flow — all on brand, all in one rhythm.
+        </p>
+        <ul class="breakdown-list">
+          <li>Custom event flyer + digital menu per night</li>
+          <li>Branded landing pages and ticket / RSVP flows</li>
+          <li>Private event booking kits with deposit and proposal capture</li>
+          <li>Mixology masterclass enrollment with payment and reminders</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Concept 03 — Dev -->
+    <div class="breakdown-row dev-row">
+      <div class="breakdown-image dev-visual">
+        <div class="dev-stack">
+          <div class="dev-chip">Next.js</div>
+          <div class="dev-chip">Neon</div>
+          <div class="dev-chip">Vercel</div>
+          <div class="dev-chip">Twilio</div>
+          <div class="dev-chip">Stripe</div>
+          <div class="dev-chip">OpenPhone AI</div>
+          <div class="dev-chip">Resend</div>
+          <div class="dev-chip">Day/Night Engine</div>
+        </div>
+        <div class="dev-note">Production stack, shipped and maintained by Recipe Labs.</div>
+      </div>
+      <div class="breakdown-copy">
+        <span class="concept-tag">03 · Dev</span>
+        <h3>Full custom <em>development</em>.</h3>
+        <p>
+          Design is half the job. Recipe Labs also builds the code. Website, reservation system, AI phone receptionist, member portal, payment integrations, email and SMS automation. One team on one stack, delivered as one invoice.
+        </p>
+        <ul class="breakdown-list">
+          <li>Custom website with Day/Night Mode engine</li>
+          <li>AI phone receptionist that takes calls, orders, and reservations 24/7</li>
+          <li>Member portal, client portal, and Stripe-powered membership program</li>
+          <li>POS, calendar, email, SMS, and review-platform integrations</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -2243,35 +2276,30 @@
 <div class="container-tight"><div class="section-divider"></div></div>
 
 
-<!-- ═══════════════════════════════ CONTENT ENGINE ═══════════════════════════════ -->
+<!-- ═══════════════════════════════ CONTENT AUTOMATION ═══════════════════════════════ -->
 <section class="section" id="content">
   <div class="container-tight">
-    <p class="section-label">Service 04 · Content Engine</p>
-    <h2 class="section-title">Turn every night into <em>shareable</em> content.</h2>
+    <p class="section-label">Service 04 · Content Automation</p>
+    <h2 class="section-title">Posting that happens <em>on its own</em>.</h2>
     <div class="section-desc">
-      The audience already exists. 109 posts and almost 5,000 followers is a strong foundation. The unlock is consistent, cinematic content that matches the quality of the room and pulls new guests out of WeHa and the surrounding metros.
+      Not a full content team — that's a different commitment. What Recipe Labs actively runs for clients today: automated event promotion, scheduled posting, and AI-assisted caption + flyer generation tied to the event calendar. Consistency without the staffing cost.
     </div>
 
-    <div class="card-grid-4">
+    <div class="card-grid-3">
       <div class="feature-card">
-        <div class="feature-card-icon"><i data-lucide="video" size="22"></i></div>
-        <h3>Weekly Reels</h3>
-        <p>Shot-list, on-site capture, and edit for every featured night. Bartender cinematics, crowd shots, signature drinks.</p>
+        <div class="feature-card-icon"><i data-lucide="calendar-clock" size="22"></i></div>
+        <h3>Event-Driven Posts</h3>
+        <p>New event on the calendar triggers an auto-generated flyer, caption, and scheduled post across every channel.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-card-icon"><i data-lucide="megaphone" size="22"></i></div>
-        <h3>Event Promo</h3>
-        <p>Flyers, Instagram-native animated posts, and countdown stories built to pull reservations, not just likes.</p>
+        <div class="feature-card-icon"><i data-lucide="repeat-2" size="22"></i></div>
+        <h3>Weekly Rhythm</h3>
+        <p>Monday recap, Thursday "tonight", Sunday brunch. A dependable posting cadence locked in, no staff required.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-card-icon"><i data-lucide="users" size="22"></i></div>
-        <h3>Creator Pipeline</h3>
-        <p>Recurring partnerships with Hartford creators to keep One Bar top of mind in the local culture conversation.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon"><i data-lucide="rewind" size="22"></i></div>
-        <h3>Recaps &amp; Stories</h3>
-        <p>Monday morning recap reels, Sunday brunch teasers, Thursday "tonight" drops. Built into a posting rhythm.</p>
+        <div class="feature-card-icon"><i data-lucide="message-square-text" size="22"></i></div>
+        <h3>AI Captions &amp; Copy</h3>
+        <p>Trained on the One Bar voice. Every caption, flyer headline, and event description generated on brand, ready to approve in one tap.</p>
       </div>
     </div>
   </div>
@@ -2285,103 +2313,9 @@
 <section class="section" id="why-us">
   <div class="container-tight">
     <p class="section-label">Why Recipe Labs</p>
-    <h2 class="section-title">Three partners. Three time zones. <em>One growth engine.</em></h2>
+    <h2 class="section-title">Global expertise, <em>local</em> network.</h2>
     <div class="section-desc">
-      Recipe Labs runs with operators on the ground in the markets that matter. That means on-demand global intelligence, around-the-clock responsiveness, and a design team that has built for hospitality, retail, dealerships, nonprofits, and live events.
-    </div>
-
-    <div class="partner-grid">
-      <div class="partner-card">
-        <div class="partner-flag">Los Angeles</div>
-        <div class="partner-name">AJ</div>
-        <div class="partner-loc">West Coast · Creative</div>
-        <p class="partner-role">
-          Creative direction, campaign design, and the cultural eye for what resonates nationally. AJ connects One Bar's brand into the West Coast aesthetic conversation and sources inspiration the East Coast hasn't seen yet.
-        </p>
-      </div>
-      <div class="partner-card">
-        <div class="partner-flag">Connecticut</div>
-        <div class="partner-name">Aaron</div>
-        <div class="partner-loc">Hartford · On the Ground</div>
-        <p class="partner-role">
-          Your local partner. Aaron is in Hartford, walks your market, knows the venues, understands the scene. He handles the in-person relationship, content capture, and the hands-on side of every deliverable.
-        </p>
-      </div>
-      <div class="partner-card">
-        <div class="partner-flag">Global · Mobile</div>
-        <div class="partner-name">Simeon</div>
-        <div class="partner-loc">Build &amp; Systems</div>
-        <p class="partner-role">
-          Technical architecture, AI systems, data pipelines, and the engineering side of every product. Mobile and global. Available whenever the system needs a move, not just in business hours.
-        </p>
-      </div>
-    </div>
-
-    <div class="highlight-box" style="margin-top:40px;">
-      <h4>What this structure actually buys you</h4>
-      <p>
-        On-demand information from three markets feeding back into every design and operational decision for One Bar. You don't just get a site — you get a living team that treats your growth like their own. That's the Recipe Labs version of cooking.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<div class="container-tight"><div class="section-divider"></div></div>
-
-
-<!-- ═══════════════════════════════ GROWTH PATH ═══════════════════════════════ -->
-<section class="section">
-  <div class="container-tight">
-    <p class="section-label">Engagement Path</p>
-    <h2 class="section-title">From first call to live brand in <em>weeks</em>.</h2>
-    <div class="section-desc">
-      A clean, phased rollout designed around your existing calendar. No disruption to service, no long freeze on operations. Each phase unlocks revenue before the next one starts.
-    </div>
-
-    <div class="funnel-flow card-glass" style="padding: 16px;">
-      <div class="funnel-step">
-        <div class="funnel-step-num">1</div>
-        <h4>Brand Audit</h4>
-        <p>Hartford intel sweep, competitor snapshot, and scope confirmation</p>
-      </div>
-      <div class="funnel-arrow">→</div>
-      <div class="funnel-step">
-        <div class="funnel-step-num">2</div>
-        <h4>Site + Phone Deploy</h4>
-        <p>Custom website live, AI receptionist ringing on day one</p>
-      </div>
-      <div class="funnel-arrow">→</div>
-      <div class="funnel-step">
-        <div class="funnel-step-num">3</div>
-        <h4>Content Engine</h4>
-        <p>First event shoot, first reels out, posting rhythm locked</p>
-      </div>
-      <div class="funnel-arrow">→</div>
-      <div class="funnel-step">
-        <div class="funnel-step-num">4</div>
-        <h4>Intelligence Loop</h4>
-        <p>Weekly Hartford report, live dashboard, monthly growth review</p>
-      </div>
-    </div>
-
-    <div class="roi-grid" style="margin-top: 56px;">
-      <div class="card-glass roi-item">
-        <div class="roi-value">1 Site</div>
-        <div class="roi-label">Custom Hartford-First</div>
-      </div>
-      <div class="card-glass roi-item">
-        <div class="roi-value">AI Phone</div>
-        <div class="roi-label">Live Receptionist</div>
-      </div>
-      <div class="card-glass roi-item">
-        <div class="roi-value">Weekly</div>
-        <div class="roi-label">Market Intelligence</div>
-      </div>
-      <div class="card-glass roi-item">
-        <div class="roi-value">3 Partners</div>
-        <div class="roi-label">Three Time Zones</div>
-      </div>
+      Recipe Labs is a team that comes together from different locations, each with different expertise. We've shipped for hospitality, retail, dealerships, nonprofits, and live events around the world — and we've got people in Hartford, in the scene, with the relationships that make a local brand land. That's the combination: global craft, local presence.
     </div>
   </div>
 </section>
@@ -2454,80 +2388,35 @@
 <section class="section" id="services">
   <div class="container-tight">
     <p class="section-label">Menu of Services</p>
-    <h2 class="section-title">A living menu, sized to <em>your</em> appetite.</h2>
+    <h2 class="section-title">What we can <em>turn on</em> for One Bar.</h2>
     <div class="section-desc">
-      Recipe Labs operates as One Bar's full in-house tech, design, and operations shop. Pick any combination — every service plugs into the Day/Night experience and the Recipe Labs dashboard. Scope and investment are shaped on a call: numbers depend on integrations, API partners, and the scale One Bar wants to hit.
+      Five core services. Pick any combination. Scope is shaped on a call.
     </div>
 
     <div class="card-glass" style="padding: 28px;">
       <table class="service-table">
-        <tr><th>Service</th><th>What You Get</th><th>Format</th></tr>
+        <tr><th>Service</th><th>What You Get</th></tr>
         <tr>
           <td>Day / Night Website</td>
-          <td>Flagship custom site that auto-switches between Day and Night mode by Hartford time. Reservations, event calendar, digital menu, mixology classes, gallery, press capture, full Hartford SEO</td>
-          <td>Build + care</td>
-        </tr>
-        <tr>
-          <td>Member Portal &amp; Loyalty</td>
-          <td>Branded guest login: profile, visit history, VIP tier, birthday perks, event pre-sale access, private-table booking, drink credits, referral tracking</td>
-          <td>Build + monthly</td>
-        </tr>
-        <tr>
-          <td>Membership Program</td>
-          <td>Founders / VIP / Regular tier system with recurring monthly revenue. Stripe-integrated, member-only nights, masterclass discounts, exclusive drops</td>
-          <td>Program design + monthly</td>
-        </tr>
-        <tr>
-          <td>Client Portal (Private Events)</td>
-          <td>Dedicated login for corporate clients, wedding parties, private buyouts: proposals, deposits, floor plans, menus, guest lists, final invoice — all in one place</td>
-          <td>Build + monthly</td>
+          <td>Custom site that auto-switches between Day and Night mode. Reservations, event calendar, digital menu, gallery, full Hartford SEO.</td>
         </tr>
         <tr>
           <td>AI Phone Receptionist</td>
-          <td>24/7 voice agent that answers calls, takes orders, books reservations, handles FAQs, routes to staff. SMS follow-up + transcript dashboard</td>
-          <td>Setup + monthly</td>
+          <td>24/7 voice agent that takes calls, orders, and reservations. SMS follow-up and call transcripts in a dashboard.</td>
         </tr>
         <tr>
-          <td>Full Dev Shop</td>
-          <td>Recipe Labs handles every line of code and every integration. POS, payments, email, SMS, calendar, review platforms, loyalty — one team, one stack, one invoice</td>
-          <td>Monthly retainer</td>
+          <td>Content Automation</td>
+          <td>Event-driven posting, weekly cadence, AI captions and flyer generation in the One Bar voice.</td>
         </tr>
         <tr>
           <td>Hartford Intelligence Suite</td>
-          <td>Competitor tracking (WeHa, Pratt Street, Front Street), weekly Monday brief, live dashboard, quarterly smart packages</td>
-          <td>Monthly subscription</td>
+          <td>Competitor tracking (WeHa, Pratt Street, Front Street), weekly brief, live dashboard.</td>
         </tr>
         <tr>
-          <td>Content Engine</td>
-          <td>Event reels, flyer design, weekly posting rhythm, Hartford creator partnerships, recap cinematics</td>
-          <td>Monthly retainer</td>
-        </tr>
-        <tr>
-          <td>Brand System</td>
-          <td>Print collateral, menu design, photo direction, signage, merch drops, Day/Night brand guidelines</td>
-          <td>Project-based</td>
-        </tr>
-        <tr>
-          <td>Event &amp; Masterclass Ops</td>
-          <td>Booking, payment, reminders, post-event follow-up for mixology classes, private events, pop-ups</td>
-          <td>Project + usage</td>
-        </tr>
-        <tr>
-          <td>CRM &amp; Guest Intelligence</td>
-          <td>Guest database, repeat visit tracking, birthday &amp; anniversary automations, VIP flags, spend-tier segmentation</td>
-          <td>Setup + monthly</td>
+          <td>Full Dev Shop</td>
+          <td>Member portal, client portal, membership program, integrations. One team, one stack, one invoice.</td>
         </tr>
       </table>
-    </div>
-
-    <div class="info-box card-glass" style="margin-top: 24px;">
-      <div class="info-box-icon"><i data-lucide="message-circle" size="22"></i></div>
-      <div>
-        <h4>Why investment is not listed here</h4>
-        <p>
-          Every line item is shaped by what's already in place, what needs to integrate, and what scale you want to run at. The honest answer is a 20-minute conversation beats any generic pricing sheet. Book a call with Recipe Labs and we'll build a precise scope the same week.
-        </p>
-      </div>
     </div>
   </div>
 </section>
@@ -2536,21 +2425,19 @@
 <div class="container-tight"><div class="section-divider"></div></div>
 
 
-<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<!-- ═══════════════════════════════ RECIPE LABS PROMO ═══════════════════════════════ -->
 <section class="cta-section" id="contact">
   <div class="cta-card">
     <div class="cta-logo-stack">
-      <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" class="onebar">
-      <span class="x">×</span>
-      <img src="media/rl-logo.png" alt="Recipe Labs" class="rl" style="filter: invert(1);">
+      <img src="media/rl-logo.png" alt="Recipe Labs" class="rl rl-only" style="filter: invert(1);">
     </div>
-    <h2>Let's build the <em>next</em> chapter of One Bar.</h2>
-    <p>The website. The AI phone. The content. The intelligence. A Hartford hospitality brand engineered end to end.</p>
+    <h2>Built by <em>Recipe Labs</em>.</h2>
+    <p>Your AI-powered growth engine. Custom websites, AI agents, intelligence dashboards, and the systems behind modern brands — built for operators ready to move.</p>
     <div class="cta-buttons">
-      <a href="https://calendly.com/contact-madebyrecipe/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Strategy Call <span class="btn-arrow">→</span></a>
-      <a href="mailto:lance@madebyrecipe.com?subject=One%20Bar%20Experience%20%E2%80%94%20Recipe%20Labs%20Overview" class="btn btn-ghost-dark btn-lg">Email Recipe Labs</a>
+      <a href="https://madebyrecipe.com" target="_blank" rel="noopener" class="btn btn-primary">Learn more about Recipe Labs <span class="btn-arrow">→</span></a>
+      <a href="https://madebyrecipe.com" target="_blank" rel="noopener" class="btn btn-ghost-dark">View our site</a>
     </div>
-    <p class="cta-sub">lance@madebyrecipe.com · madebyrecipe.com · Recipe Labs × One Bar Experience</p>
+    <p class="cta-sub">madebyrecipe.com · lance@madebyrecipe.com</p>
   </div>
 </section>
 
