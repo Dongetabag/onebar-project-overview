@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Bar Experience — Project Overview by Recipe Labs</title>
-  <meta name="description" content="A custom Hartford hospitality growth program for One Bar Experience — website, AI receptionist, intelligence suite, and content engine. Prepared by Recipe Labs.">
+  <title>One Bar Experience · Services Overview by Recipe Labs</title>
+  <meta name="description" content="A services overview for One Bar Experience. Custom website, AI phone line, content automation, market intelligence, and full development. Prepared by Recipe Labs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -1072,7 +1072,83 @@
       color: #fff;
     }
 
-    /* ══ THE EXPERIENCE — DAY/NIGHT SPLIT ══ */
+    /* ══ THEME NOTE (small, discreet idea card) ══ */
+    .theme-note-section { padding: 72px 0 88px; }
+    .theme-note-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+    }
+    html[data-theme="dark"] .theme-note-card {
+      background: rgba(255,255,255,0.025);
+    }
+    @media (min-width: 768px) {
+      .theme-note-card { grid-template-columns: auto 1fr; gap: 40px; padding: 36px 44px; }
+    }
+    .theme-circles {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .theme-circle {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .theme-circle.is-light {
+      background: #FCF9F2;
+      border: 1px solid #EEEEF0;
+    }
+    .theme-circle.is-dark {
+      background: #0A0A0B;
+      border: 1px solid #1A1A1D;
+    }
+    .theme-circle img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .theme-circle .logo-dark-swap {
+      filter: invert(1) hue-rotate(180deg);
+    }
+    .theme-note-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .theme-note-copy h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .theme-note-copy p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    @media (max-width: 640px) {
+      .theme-circle { width: 76px; height: 76px; }
+      .theme-note-copy h3 { font-size: 19px; }
+    }
+
+    /* ══ THE EXPERIENCE — DAY/NIGHT SPLIT (legacy, now unused) ══ */
     .experience-section { padding: 96px 0 112px; }
     .experience-split {
       display: grid;
@@ -1761,36 +1837,32 @@
     <div style="flex:1;display:flex;align-items:flex-end;">
       <div class="hero-content">
         <div class="hero-copy">
-          <p class="hero-eyebrow">Born in the 860 · Built for Hartford nightlife</p>
+          <p class="hero-eyebrow">Services Overview · Prepared by Recipe Labs</p>
           <h1>
-            An <span class="accent">experience</span>,<br>
-            reimagined by the <span class="accent">hour</span>.
+            A project overview for<br>
+            the <span class="accent">One Bar</span> experience.
           </h1>
           <p class="hero-sub">
-            One Bar isn't a place. It's an experience that shifts with Hartford's clock. A digital program built around that truth: a website that flips from day to night, a member portal, a full custom tech stack, all engineered by Recipe Labs.
+            A quick look at what Recipe Labs can bring to One Bar. A custom website, an AI phone line, a few smart systems in the back, and design for everything a guest sees. Built to be read at your own pace, front to back.
           </p>
           <div class="hero-checks">
             <div class="hero-check">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              A living Day / Night website that changes with the room
+              A custom website that looks like the room, not a template
             </div>
             <div class="hero-check">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              Custom member portal, client portal, and loyalty program
+              An AI phone line that takes calls, orders, and reservations
             </div>
             <div class="hero-check">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              Recipe Labs handles every piece of dev, design, and ops
+              One team for the design, the build, and the day to day
             </div>
           </div>
           <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="#experience" class="btn btn-primary">See the Experience <span class="btn-arrow">↓</span></a>
-            <a href="#services" class="btn btn-ghost-dark">Full Service Menu</a>
+            <a href="#ideas" class="btn btn-primary">See the Ideas <span class="btn-arrow">↓</span></a>
+            <a href="#services" class="btn btn-ghost-dark">Services</a>
           </div>
-          <p style="margin-top:18px;font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;text-transform:uppercase;">
-            <span class="pulse-dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;"></span>
-            This page follows the same day/night rhythm · toggle it in the nav
-          </p>
         </div>
 
         <div>
@@ -1905,63 +1977,22 @@
 <div class="container-tight"><div class="section-divider"></div></div>
 
 
-<!-- ═══════════════════════════════ THE EXPERIENCE — DAY / NIGHT ═══════════════════════════════ -->
-<section class="experience-section" id="experience">
+<!-- ═══════════════════════════════ SMALL THEME NOTE (light + dark idea) ═══════════════════════════════ -->
+<section class="theme-note-section" id="theme-idea">
   <div class="container-tight">
-    <p class="section-label">The Experience</p>
-    <h2 class="section-title">A website that lives the same <em>rhythm</em> as the room.</h2>
-    <div class="section-desc">
-      Most hospitality sites look the same at 11 AM and 11 PM. One Bar's won't. Recipe Labs is proposing a living website that flips from Day Mode to Night Mode on a schedule tied to Hartford's clock — a digital mirror of what walking in at 2 in the afternoon versus 10 on a Friday actually feels like. The overview you're reading is already running it. Try the toggle in the top nav.
-    </div>
-
-    <div class="experience-split">
-      <div class="exp-side day">
-        <div>
-          <div class="exp-clock">
-            <span class="dot"></span>
-            <span>6 AM → 6 PM · Hartford</span>
-          </div>
-          <div class="exp-logo" style="margin:28px 0 32px;">
-            <img src="media/one-bar-logo-clean.png" alt="One Bar Experience — Day Mode">
-          </div>
-          <h3>Day Mode: the <em>brunch</em>, the lunch meeting, the kitchen.</h3>
-          <p>Natural, cream, warm. A daytime site built to convert the Hartford professional grabbing lunch near Union Station, the private-event planner scoping rooms, the brunch crowd on Sunday at 1.</p>
-          <ul class="exp-beats">
-            <li>Reservation-first hero and brunch-forward menu</li>
-            <li>Private event inquiries surface in the top half</li>
-            <li>Team meetings, masterclasses, corporate bookings</li>
-            <li>Warm photography, lighter type, cleaner UI</li>
-          </ul>
+    <div class="theme-note-card">
+      <div class="theme-circles">
+        <div class="theme-circle is-light">
+          <img src="media/one-bar-logo-clean.png" alt="One Bar logo on white">
+        </div>
+        <div class="theme-circle is-dark">
+          <img src="media/one-bar-logo-clean.png" alt="One Bar logo on black" class="logo-dark-swap">
         </div>
       </div>
-      <div class="exp-side night">
-        <div>
-          <div class="exp-clock">
-            <span class="dot"></span>
-            <span>6 PM → 6 AM · Hartford</span>
-          </div>
-          <div class="exp-logo" style="margin:28px 0 32px;">
-            <img src="media/one-bar-logo-clean.png" alt="One Bar Experience — Night Mode">
-          </div>
-          <h3>Night Mode: the <em>experience</em>, the DJ, the energy.</h3>
-          <p>Deep black, crimson glow, cinematic. The moment the room shifts into R&amp;B Fridays, Round Robin, the Comedy Experience — the site shifts with it. Guests feel the tone before they open the door.</p>
-          <ul class="exp-beats">
-            <li>Tonight's event takes the hero</li>
-            <li>DJ lineup, cover, and countdown front and center</li>
-            <li>Signature cocktails, bottle service, private table booking</li>
-            <li>Cinematic reels auto-play, dim UI chrome</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-box card-glass" style="margin-top: 32px;">
-      <div class="info-box-icon"><i data-lucide="clock" size="22"></i></div>
-      <div>
-        <h4>Auto-switching, overridable, persistent</h4>
-        <p>
-          The theme reads Hartford local time and flips automatically. Guests who prefer one mode can lock it with a single click and it remembers them. Staff can trigger Night Mode early for a special event. Every component, color, and image is tied into the system so the whole brand breathes with the hour.
-        </p>
+      <div class="theme-note-copy">
+        <span class="theme-note-tag">A theme idea</span>
+        <h3>A clean white look and a clean black look. Same brand, two moods.</h3>
+        <p>Just a quick idea we like for the site. A white look for daytime and a black look for nighttime. Nothing locked in, just something we think could feel right for One Bar.</p>
       </div>
     </div>
   </div>
@@ -1979,19 +2010,19 @@
 </div>
 
 
-<!-- ═══════════════════════════════ BRAND SHOWCASE ═══════════════════════════════ -->
-<section class="section" style="padding-top:40px;">
+<!-- ═══════════════════════════════ IDEAS WE CAN EXECUTE ON NOW ═══════════════════════════════ -->
+<section class="section" style="padding-top:40px;" id="ideas">
   <div class="container-tight">
-    <p class="section-label">Brand in Motion</p>
-    <h2 class="section-title">What Recipe Labs actually <em>does</em> for One Bar.</h2>
+    <p class="section-label">Ideas we can execute on now</p>
+    <h2 class="section-title">A few things we are ready to <em>run with</em>.</h2>
     <div class="section-desc">
-      Three tight capabilities, nothing more. Visual design for the whole brand. Curated event design for every night on the calendar. And full custom development that ties it all together.
+      Before the full services list, here are a few specific ideas we have been thinking about for One Bar. Everything on this page we can actually build and deliver. Nothing here is a concept pitch.
     </div>
 
     <!-- Concept 01 — Design: One Brand, Every Screen (featured with sub-photos) -->
     <div class="breakdown-row">
       <div class="breakdown-image design-feature">
-        <img src="media/mockup-virtual.png" alt="One Bar digital ecosystem — responsive website, mobile, interactive floor plan" class="main-mockup">
+        <img src="media/mockup-virtual.png" alt="One Bar digital ecosystem, responsive website, mobile, and interactive floor plan" class="main-mockup">
         <img src="media/mockup-stationery.png" alt="Brand collateral" class="sub-mockup sub-top">
         <img src="media/mockup-menu.png" alt="Menu system" class="sub-mockup sub-bottom">
       </div>
@@ -1999,13 +2030,13 @@
         <span class="concept-tag">01 · Design</span>
         <h3>One brand, every <em>screen</em>.</h3>
         <p>
-          Visual design for the entire One Bar universe, front to back. The website is the anchor. The menu, print collateral, signage, merch, and digital touchpoints all inherit from the same system. One voice, one aesthetic, every surface.
+          Visual design for everything a guest, a partner, or a press contact sees. The website sets the look. The menu, the flyers, the signage, and the print pieces all follow from there. One consistent feel, everywhere One Bar shows up.
         </p>
         <ul class="breakdown-list">
-          <li>Custom website: desktop, mobile, day/night mode</li>
-          <li>Digital + printed menu system that refreshes seasonally</li>
-          <li>Brand guidelines, signage, merch, and print collateral</li>
-          <li>Guest-facing UI that mirrors the room: curated, elevated, effortless</li>
+          <li>Custom website for desktop and mobile</li>
+          <li>Menu design for print and for the site</li>
+          <li>Brand guidelines, signage, and merch direction</li>
+          <li>One style, used across every screen and printed piece</li>
         </ul>
       </div>
     </div>
@@ -2013,19 +2044,19 @@
     <!-- Concept 02 — Events -->
     <div class="breakdown-row reverse">
       <div class="breakdown-image">
-        <img src="media/mockup-collective.png" alt="Curated event design for R&amp;B Fridays, Comedy Experience, private bookings">
+        <img src="media/mockup-collective.png" alt="Custom event content, flyers, and menus for One Bar">
       </div>
       <div class="breakdown-copy">
         <span class="concept-tag">02 · Events</span>
-        <h3>Curated event menus, every <em>night</em>.</h3>
+        <h3>Custom event content, done for <em>you</em>.</h3>
         <p>
-          Every featured night on the calendar gets its own design treatment. R&amp;B Fridays, Comedy Experience, Round Robin, NYE, private buyouts, mixology masterclasses. Flyer, digital menu, landing page, reservation flow — all on brand, all in one rhythm.
+          When you want to run a private event, a themed night, or a quick promo, we can handle the design side. Flyers, menus, digital invites, and landing pages. Your logo sits on anything we put out, and when a date or detail changes, we update it fast.
         </p>
         <ul class="breakdown-list">
-          <li>Custom event flyer + digital menu per night</li>
-          <li>Branded landing pages and ticket / RSVP flows</li>
-          <li>Private event booking kits with deposit and proposal capture</li>
-          <li>Mixology masterclass enrollment with payment and reminders</li>
+          <li>Private event flyers and menus</li>
+          <li>Themed night promos and digital invites</li>
+          <li>Print versions for in house, digital versions for social</li>
+          <li>Quick turnarounds when a date or lineup changes</li>
         </ul>
       </div>
     </div>
@@ -2034,30 +2065,34 @@
     <div class="breakdown-row dev-row">
       <div class="breakdown-image dev-visual">
         <div class="dev-stack">
-          <div class="dev-chip">Next.js</div>
-          <div class="dev-chip">Neon</div>
-          <div class="dev-chip">Vercel</div>
-          <div class="dev-chip">Twilio</div>
-          <div class="dev-chip">Stripe</div>
-          <div class="dev-chip">OpenPhone AI</div>
-          <div class="dev-chip">Resend</div>
-          <div class="dev-chip">Day/Night Engine</div>
+          <div class="dev-chip">Website production</div>
+          <div class="dev-chip">Custom email</div>
+          <div class="dev-chip">Domain setup</div>
+          <div class="dev-chip">Reservations</div>
+          <div class="dev-chip">AI phone line</div>
+          <div class="dev-chip">Payments</div>
+          <div class="dev-chip">Email automation</div>
+          <div class="dev-chip">Backend setup</div>
         </div>
-        <div class="dev-note">Production stack, shipped and maintained by Recipe Labs.</div>
+        <div class="dev-note">The technical side, handled end to end by Recipe Labs.</div>
       </div>
       <div class="breakdown-copy">
         <span class="concept-tag">03 · Dev</span>
-        <h3>Full custom <em>development</em>.</h3>
+        <h3>The technical side, <em>handled</em>.</h3>
         <p>
-          Design is half the job. Recipe Labs also builds the code. Website, reservation system, AI phone receptionist, member portal, payment integrations, email and SMS automation. One team on one stack, delivered as one invoice.
+          The build side of things. Website setup, a custom email address on your domain, the phone line, the payment side, the backend that ties it together. If it needs to be built, wired in, or turned on, we take care of it.
         </p>
         <ul class="breakdown-list">
-          <li>Custom website with Day/Night Mode engine</li>
-          <li>AI phone receptionist that takes calls, orders, and reservations 24/7</li>
-          <li>Member portal, client portal, and Stripe-powered membership program</li>
-          <li>POS, calendar, email, SMS, and review-platform integrations</li>
+          <li>Website production, fully custom and not a template</li>
+          <li>Email addresses on your own domain</li>
+          <li>AI phone line that takes calls and reservations</li>
+          <li>Backend infrastructure for bookings, payments, and follow up</li>
         </ul>
       </div>
+    </div>
+
+    <div style="text-align:center;margin-top:56px;">
+      <a href="#services" class="btn btn-primary">Jump to Services <span class="btn-arrow">↓</span></a>
     </div>
   </div>
 </section>
@@ -2070,9 +2105,9 @@
 <section class="section" id="website">
   <div class="container-tight">
     <p class="section-label">Service 01 · Website Design</p>
-    <h2 class="section-title">A site that looks like the bar, not like a <em>template</em>.</h2>
+    <h2 class="section-title">A site that looks like the <em>bar</em>, not a template.</h2>
     <div class="section-desc">
-      Most Hartford venues hide behind cookie-cutter sites that undersell the room. We build you a custom, cinematic site that looks and feels like walking into One Bar — with every feature a modern hospitality brand should have.
+      A lot of Hartford bars have sites that do not match the room they belong to. We build one that does. Designed around One Bar, with every piece a modern hospitality brand needs.
     </div>
 
     <div class="card-grid-3">
@@ -2221,7 +2256,7 @@
     <p class="section-label">Service 03 · Intelligence Suite</p>
     <h2 class="section-title">Know what the rest of Hartford is <em>doing</em>.</h2>
     <div class="section-desc">
-      The same competitive intelligence Recipe Labs built for its own operations — now pointed at Hartford, West Hartford, Stamford, and every venue competing for your guests' Friday night. Delivered as a private dashboard plus weekly briefings.
+      We watch what the other bars in Hartford, West Hartford, and Stamford are doing. Prices, events, social posts, all in one view. You get a weekly summary and a live dashboard, so you always know where the competition stands.
     </div>
 
     <div class="market-grid">
@@ -2265,7 +2300,7 @@
       <div>
         <h4>This is the Recipe Labs difference</h4>
         <p>
-          Most agencies hand you a website and disappear. Recipe Labs keeps an active intelligence layer running on your market — every week. The same stack we use internally to grow our own portfolio is now pointed at Hartford hospitality for One Bar.
+          Most agencies build a site and then disappear. We stay in the picture. Every week you get fresh numbers on the market, not just a file drop and a handshake.
         </p>
       </div>
     </div>
@@ -2282,7 +2317,7 @@
     <p class="section-label">Service 04 · Content Automation</p>
     <h2 class="section-title">Posting that happens <em>on its own</em>.</h2>
     <div class="section-desc">
-      Not a full content team — that's a different commitment. What Recipe Labs actively runs for clients today: automated event promotion, scheduled posting, and AI-assisted caption + flyer generation tied to the event calendar. Consistency without the staffing cost.
+      We are not running a full in house content team for you. What we do run is the automation side. Every event on the calendar triggers a flyer, a caption, and a scheduled post. Set it once, and the brand keeps posting on its own.
     </div>
 
     <div class="card-grid-3">
@@ -2315,7 +2350,7 @@
     <p class="section-label">Why Recipe Labs</p>
     <h2 class="section-title">Global expertise, <em>local</em> network.</h2>
     <div class="section-desc">
-      Recipe Labs is a team that comes together from different locations, each with different expertise. We've shipped for hospitality, retail, dealerships, nonprofits, and live events around the world — and we've got people in Hartford, in the scene, with the relationships that make a local brand land. That's the combination: global craft, local presence.
+      Recipe Labs is a team that comes together from a few different places. Each of us brings something different. We have worked with hospitality, retail, dealerships, nonprofits, and live events around the world. We also have people in Hartford who know the scene and have the local relationships. Global craft, local presence.
     </div>
   </div>
 </section>
@@ -2331,7 +2366,7 @@
       <p class="hartford-flag">Born in the 860</p>
       <h2>Hartford doesn't need another bar. It needs an <em>anchor</em>.</h2>
       <p>
-        Downtown is waking up. 777 Main is full. Pratt Street is the Instagram block. Dunkin' Park is pulling summer energy into the core every night the Yard Goats are home. Union Place — One Bar's block — is the first thing a visitor sees stepping off a train from New York or Boston. The program Recipe Labs is building is shaped by that specific geography, that specific moment, that specific city.
+        Downtown Hartford is in a good moment. 777 Main is full. Pratt Street is busy again. Dunkin' Park brings people in all summer. And Union Place, which is One Bar's block, is the first thing anyone sees when they step off a train from New York or Boston. This plan is built around all of that.
       </p>
 
       <div class="hartford-grid">
@@ -2387,10 +2422,9 @@
 <!-- ═══════════════════════════════ SERVICES MENU ═══════════════════════════════ -->
 <section class="section" id="services">
   <div class="container-tight">
-    <p class="section-label">Menu of Services</p>
-    <h2 class="section-title">What we can <em>turn on</em> for One Bar.</h2>
+    <h2 class="section-title">Services</h2>
     <div class="section-desc">
-      Five core services. Pick any combination. Scope is shaped on a call.
+      Five core services. Pick any of them, or all of them. We scope the details on a call.
     </div>
 
     <div class="card-glass" style="padding: 28px;">
@@ -2432,7 +2466,7 @@
       <img src="media/rl-logo.png" alt="Recipe Labs" class="rl rl-only" style="filter: invert(1);">
     </div>
     <h2>Built by <em>Recipe Labs</em>.</h2>
-    <p>Your AI-powered growth engine. Custom websites, AI agents, intelligence dashboards, and the systems behind modern brands — built for operators ready to move.</p>
+    <p>We build websites, AI agents, and the systems behind modern brands. Made for operators who are ready to move.</p>
     <div class="cta-buttons">
       <a href="https://madebyrecipe.com" target="_blank" rel="noopener" class="btn btn-primary">Learn more about Recipe Labs <span class="btn-arrow">→</span></a>
       <a href="https://madebyrecipe.com" target="_blank" rel="noopener" class="btn btn-ghost-dark">View our site</a>
@@ -2464,7 +2498,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 One Bar Experience · 70 Union Pl, Hartford, CT · Confidential project overview</p>
-      <a href="https://madebyrecipe.com" target="_blank" rel="noopener">Built by Recipe Labs — madebyrecipe.com</a>
+      <a href="https://madebyrecipe.com" target="_blank" rel="noopener">Built by Recipe Labs · madebyrecipe.com</a>
     </div>
   </div>
 </footer>
