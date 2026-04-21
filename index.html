@@ -262,61 +262,56 @@
     /* Recipe Labs logo auto-inverts based on theme */
     .rl-auto-invert { filter: invert(var(--logo-invert)); transition: filter 0.6s ease; }
 
-    /* ══ DAY/NIGHT TOGGLE ══ */
-    .theme-toggle {
+    /* ══ DAY/NIGHT SEGMENTED TOGGLE ══ */
+    .theme-seg {
+      display: inline-flex;
+      padding: 3px;
+      background: #F4F4F5;
+      border: 1px solid #E4E4E7;
+      border-radius: 8px;
+      gap: 2px;
+      height: 36px;
+      align-items: stretch;
+    }
+    .theme-seg .seg-option {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 7px 8px 7px 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-full);
-      background: var(--pill-bg);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-primary);
+      gap: 6px;
+      padding: 0 12px;
+      background: transparent;
+      border: 0;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #747686;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
       user-select: none;
     }
-    .theme-toggle:hover {
-      background: var(--pill-bg-hover);
-      border-color: var(--border-hover);
+    .theme-seg .seg-option svg { width: 13px; height: 13px; }
+    .theme-seg .seg-option:hover { color: #0A0A0B; }
+    html[data-theme="light"] .theme-seg .seg-option[data-theme="light"] {
+      background: #ffffff;
+      color: #0A0A0B;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.04);
     }
-    .theme-toggle .tt-label { white-space: nowrap; }
-    .theme-toggle .tt-switch {
-      width: 46px;
-      height: 26px;
-      border-radius: 100px;
-      background: var(--accent);
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
+    html[data-theme="dark"] .theme-seg {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.1);
     }
-    .theme-toggle .tt-dot {
-      position: absolute;
-      top: 3px; left: 3px;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: #fff;
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    }
-    html[data-theme="dark"] .theme-toggle .tt-dot { transform: translateX(20px); }
-    .theme-toggle .tt-dot svg {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--accent);
+    html[data-theme="dark"] .theme-seg .seg-option { color: rgba(245,241,232,0.5); }
+    html[data-theme="dark"] .theme-seg .seg-option:hover { color: #F5F1E8; }
+    html[data-theme="dark"] .theme-seg .seg-option[data-theme="dark"] {
+      background: rgba(255,255,255,0.09);
+      color: #F5F1E8;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.4);
     }
     @media (max-width: 640px) {
-      .theme-toggle { padding: 6px 8px 6px 12px; font-size: 10px; gap: 8px; }
-      .theme-toggle .tt-label { display: none; }
-      .theme-toggle .tt-switch { width: 40px; height: 22px; }
-      .theme-toggle .tt-dot { width: 16px; height: 16px; }
-      html[data-theme="dark"] .theme-toggle .tt-dot { transform: translateX(18px); }
+      .theme-seg { height: 32px; }
+      .theme-seg .seg-option { padding: 0 10px; font-size: 11px; }
+      .theme-seg .seg-option span.seg-text { display: none; }
     }
     .topnav-inner {
       max-width: 1520px;
@@ -335,24 +330,18 @@
       align-items: center;
       gap: 10px;
     }
-    .topnav { padding: 4px 0; }
-    .topnav-inner { padding-top: 18px; padding-bottom: 18px; }
-    .topnav-brand img.onebar { height: 68px; width: auto; display: block; }
+    .topnav-inner { padding-top: 14px; padding-bottom: 14px; }
+    .topnav-brand { gap: 14px; }
+    .topnav-brand img.onebar { height: 42px; width: auto; display: block; }
     .topnav-brand .sep {
-      width: 1px; height: 48px; background: var(--border);
+      width: 1px; height: 24px; background: var(--border);
     }
-    .topnav-brand .partner {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .topnav-brand .rl-logo { height: 58px; width: auto; opacity: 1; }
+    .topnav-brand .partner { display: none; }
+    .topnav-brand .rl-logo { height: 32px; width: auto; opacity: 1; }
     @media (max-width: 640px) {
-      .topnav-brand img.onebar { height: 48px; }
-      .topnav-brand .rl-logo { height: 40px; }
-      .topnav-brand .sep { height: 36px; }
+      .topnav-brand img.onebar { height: 36px; }
+      .topnav-brand .rl-logo { height: 26px; }
+      .topnav-brand .sep { height: 20px; }
     }
     .topnav-actions { display: flex; align-items: center; gap: 10px; }
     @media (max-width: 640px) {
@@ -385,29 +374,10 @@
     .hero-bg-gradient {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse at 85% 20%, rgba(227, 6, 19, 0.28) 0%, transparent 55%),
-        radial-gradient(ellipse at 15% 85%, rgba(255, 107, 107, 0.10) 0%, transparent 50%),
-        linear-gradient(180deg, #0D0B09 0%, #070605 100%);
+      background: #0A0A0B;
       z-index: 1;
     }
-    .hero-bg-onebar {
-      position: absolute;
-      right: -120px; top: 50%;
-      transform: translateY(-50%);
-      width: 720px; height: 720px;
-      opacity: 0.06;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .hero-bg-grain {
-      position: absolute; inset: 0;
-      background-image:
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 4px);
-      z-index: 2;
-      pointer-events: none;
-    }
-    .hero-overlay, .hero-overlay-glow { display: none; }
+    .hero-bg-onebar, .hero-bg-grain, .hero-overlay, .hero-overlay-glow { display: none; }
     .hero-status {
       position: relative;
       z-index: 10;
@@ -419,13 +389,7 @@
     }
     @media (min-width: 768px) { .hero-status { padding: 32px 40px 0; } }
     .hero-logo-mark {
-      display: flex; align-items: center; gap: 24px;
-      padding: 14px 22px;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-full);
+      display: flex; align-items: center; gap: 22px;
     }
     .hero-logo-mark img.onebar { height: 108px; width: auto; }
     .hero-logo-mark img.rl {
@@ -472,15 +436,15 @@
     .hero-eyebrow {
       font-size: 11px;
       font-weight: 500;
-      color: rgba(255, 77, 77, 0.9);
+      color: rgba(255, 255, 255, 0.68);
       letter-spacing: 0.22em;
       text-transform: uppercase;
       margin-bottom: 22px;
-      padding: 6px 14px;
-      border: 1px solid rgba(255, 77, 77, 0.3);
+      padding: 7px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 100px;
       display: inline-block;
-      background: rgba(227, 6, 19, 0.08);
+      background: rgba(255, 255, 255, 0.04);
     }
     .hero h1 {
       font-family: 'Playfair Display', Georgia, serif;
@@ -660,16 +624,20 @@
       border: 1px solid rgba(20, 18, 16, 0.04);
     }
     .feature-card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(227, 6, 19, 0.14) 0%, rgba(227, 6, 19, 0.04) 100%);
-      border: 1px solid rgba(227, 6, 19, 0.12);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #F4F4F5;
+      border: 1px solid #E4E4E7;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
       color: var(--accent);
+    }
+    html[data-theme="dark"] .feature-card-icon {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
     }
     .feature-card h3 {
       font-family: 'DM Sans', 'Inter', sans-serif;
@@ -738,16 +706,20 @@
       padding: 24px;
     }
     .info-box-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(227, 6, 19, 0.14) 0%, rgba(227, 6, 19, 0.04) 100%);
-      border: 1px solid rgba(227, 6, 19, 0.12);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #F4F4F5;
+      border: 1px solid #E4E4E7;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       color: var(--accent);
+    }
+    html[data-theme="dark"] .info-box-icon {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
     }
     .info-box h4 {
       font-family: 'DM Sans', 'Inter', sans-serif;
@@ -766,11 +738,14 @@
 
     /* ── HIGHLIGHT BOX ── */
     .highlight-box {
-      background: var(--accent-soft);
-      border: 1px solid rgba(227, 6, 19, 0.14);
+      background: var(--bg-white);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 24px;
       margin-top: 32px;
+    }
+    html[data-theme="dark"] .highlight-box {
+      background: rgba(255,255,255,0.025);
     }
     .highlight-box h4 {
       font-family: 'DM Sans', 'Inter', sans-serif;
@@ -819,13 +794,18 @@
       font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid rgba(227, 6, 19, 0.18);
-      padding: 6px 14px;
-      border-radius: 100px;
+      color: #0A0A0B;
+      background: #F4F4F5;
+      border: 1px solid #E4E4E7;
+      padding: 7px 14px;
+      border-radius: 6px;
       margin-bottom: 18px;
-      font-weight: 500;
+      font-weight: 600;
+    }
+    html[data-theme="dark"] .breakdown-copy .concept-tag {
+      color: #F5F1E8;
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.12);
     }
     .breakdown-copy h3 {
       font-family: 'Playfair Display', Georgia, serif;
@@ -905,14 +885,8 @@
       position: relative;
       overflow: hidden;
     }
-    .partner-card::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 180px; height: 180px;
-      background: radial-gradient(circle, rgba(184,86,64,0.18) 0%, transparent 70%);
-      border-radius: 50%;
-    }
+    .partner-card { border: 1px solid rgba(255,255,255,0.05); }
+    .partner-card::before { display: none; }
     .partner-flag {
       font-size: 10px;
       font-weight: 600;
@@ -1271,28 +1245,13 @@
 
     /* ── VISION PANEL (logo statement, replaces photo banner) ── */
     .vision-panel {
-      background: linear-gradient(135deg, #0D0B09 0%, #1A1510 100%);
+      background: #0C0A08;
       border-radius: var(--radius-xl);
       padding: 60px 48px;
       margin-bottom: 48px;
       position: relative;
       overflow: hidden;
-    }
-    .vision-panel::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 360px; height: 360px;
-      background: radial-gradient(circle, rgba(227, 6, 19, 0.16) 0%, transparent 60%);
-      border-radius: 50%;
-    }
-    .vision-panel::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: -60px;
-      width: 260px; height: 260px;
-      background: radial-gradient(circle, rgba(255, 107, 107, 0.08) 0%, transparent 60%);
-      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
     }
     .vision-panel-logos {
       display: flex;
@@ -1363,15 +1322,8 @@
       position: relative;
       overflow: hidden;
     }
-    .market-card::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 90px; height: 90px;
-      background: radial-gradient(circle, rgba(184,86,64,0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      transform: translate(20px, -20px);
-    }
+    .market-card { border: 1px solid rgba(255,255,255,0.05); }
+    .market-card::before { display: none; }
     .market-card .mc-flag {
       font-size: 10px;
       font-weight: 600;
@@ -1404,22 +1356,9 @@
       overflow: hidden;
       margin-top: 40px;
     }
-    .brand-hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -120px;
-      width: 420px; height: 420px;
-      background: radial-gradient(circle, rgba(227, 6, 19, 0.14) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .brand-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(255, 107, 107, 0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
+    .brand-hero::before,
+    .brand-hero::after { display: none; }
+    .brand-hero { border: 1px solid rgba(255,255,255,0.05); }
     .brand-hero-eyebrow {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -1514,22 +1453,8 @@
       overflow: hidden;
     }
     @media (min-width: 768px) { .cta-card { padding: 88px 40px; } }
-    .cta-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(227, 6, 19, 0.22) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(255, 107, 107, 0.12) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    .cta-card::after {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 4px);
-      pointer-events: none;
-    }
+    .cta-card::before, .cta-card::after { display: none; }
+    .cta-card { border: 1px solid rgba(255,255,255,0.05); }
     .cta-logo-stack {
       position: relative;
       z-index: 2;
@@ -1743,14 +1668,19 @@
     <div class="topnav-brand">
       <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" title="One Bar Experience" class="onebar">
       <span class="sep"></span>
-      <span class="partner">Prepared by</span>
       <img src="media/rl-logo.png" alt="Recipe Labs" title="Recipe Labs" class="rl-logo rl-auto-invert">
     </div>
     <div class="topnav-actions">
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle day/night mode" title="Switch between Day and Night mode">
-        <span class="tt-label" id="themeLabel">Day Mode</span>
-        <span class="tt-switch"><span class="tt-dot"></span></span>
-      </button>
+      <div class="theme-seg" role="tablist" aria-label="Theme">
+        <button class="seg-option" data-theme="light" type="button" aria-label="Day mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span class="seg-text">Day</span>
+        </button>
+        <button class="seg-option" data-theme="dark" type="button" aria-label="Night mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span class="seg-text">Night</span>
+        </button>
+      </div>
       <a href="#services" class="btn btn-secondary btn-sm">Services</a>
       <a href="#contact" class="btn btn-primary btn-sm">Book a Call <span class="btn-arrow">→</span></a>
     </div>
@@ -1768,8 +1698,6 @@
     <div class="hero-status">
       <div class="hero-logo-mark">
         <img src="media/one-bar-logo-clean.png" alt="One Bar Experience" class="onebar">
-        <span class="x">×</span>
-        <img src="media/rl-logo.png" alt="Recipe Labs" class="rl" style="filter: invert(1) brightness(1.2);">
       </div>
       <div class="hero-status-badge">
         <span class="hero-status-dot pulse-dot"></span>
@@ -1803,8 +1731,8 @@
             </div>
           </div>
           <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="#experience" class="btn btn-primary btn-lg">See the Experience <span class="btn-arrow">↓</span></a>
-            <a href="#services" class="btn btn-ghost-dark btn-lg">Full Service Menu</a>
+            <a href="#experience" class="btn btn-primary">See the Experience <span class="btn-arrow">↓</span></a>
+            <a href="#services" class="btn btn-ghost-dark">Full Service Menu</a>
           </div>
           <p style="margin-top:18px;font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;text-transform:uppercase;">
             <span class="pulse-dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;"></span>
@@ -1959,7 +1887,7 @@
             <span class="dot"></span>
             <span>6 PM → 6 AM · Hartford</span>
           </div>
-          <div class="exp-logo" style="margin:28px 0 32px;filter:invert(1);">
+          <div class="exp-logo" style="margin:28px 0 32px;">
             <img src="media/one-bar-logo-clean.png" alt="One Bar Experience — Night Mode">
           </div>
           <h3>Night Mode: the <em>experience</em>, the DJ, the energy.</h3>
@@ -2697,29 +2625,22 @@
   reveal('.experience-split', 'rise', 0);
   reveal('.hartford-card', 'pop', 0.2);
 
-  // ══ DAY / NIGHT THEME ENGINE — defaults to light, manual toggle only ══
+  // ══ DAY / NIGHT THEME — segmented toggle, light default ══
   (function initTheme() {
     const STORAGE_KEY = 'onebar-theme';
     const root = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-    const label = document.getElementById('themeLabel');
 
     function applyTheme(theme) {
       root.setAttribute('data-theme', theme);
-      if (label) label.textContent = theme === 'dark' ? 'Night Mode' : 'Day Mode';
       localStorage.setItem(STORAGE_KEY, theme);
     }
 
-    // Default to light. Only pick up a stored manual choice if the user toggled before.
     const stored = localStorage.getItem(STORAGE_KEY);
     applyTheme(stored === 'dark' ? 'dark' : 'light');
 
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        applyTheme(next);
-      });
-    }
+    document.querySelectorAll('.theme-seg .seg-option').forEach(btn => {
+      btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
+    });
   })();
 </script>
 </body>
